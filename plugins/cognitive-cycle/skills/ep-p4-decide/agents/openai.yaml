@@ -1,0 +1,4 @@
+interface:
+  display_name: "EP P4 Decide"
+  short_description: "Declare responsible EP audit decisions"
+  default_prompt: "Use $ep-p4-decide to turn a grounded judgment into a concrete decision."

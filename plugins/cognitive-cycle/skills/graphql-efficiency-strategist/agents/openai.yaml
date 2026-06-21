@@ -1,0 +1,4 @@
+interface:
+  display_name: "GraphQL Efficiency"
+  short_description: "Shape GraphQL reads and mutations"
+  default_prompt: "Use $graphql-efficiency-strategist to plan efficient GitHub GraphQL work."

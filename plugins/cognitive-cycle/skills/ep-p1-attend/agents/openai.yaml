@@ -1,0 +1,4 @@
+interface:
+  display_name: "EP P1 Attend"
+  short_description: "Characterize EP audit evidence with fidelity"
+  default_prompt: "Use $ep-p1-attend to characterize the given project evidence before interpretation."

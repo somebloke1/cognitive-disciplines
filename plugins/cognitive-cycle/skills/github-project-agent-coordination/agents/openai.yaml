@@ -1,0 +1,4 @@
+interface:
+  display_name: "GitHub Project Coordination"
+  short_description: "Coordinate issues, PRs, and Project #7"
+  default_prompt: "Use $github-project-agent-coordination to update GitHub Project #7."

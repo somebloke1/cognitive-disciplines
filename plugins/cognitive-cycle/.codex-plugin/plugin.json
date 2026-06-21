@@ -1,0 +1,37 @@
+{
+  "name": "cognitive-cycle",
+  "version": "0.1.0",
+  "description": "Harnessed P1-P4 cognitive-cycle skills, packet contracts, and structural validators for Codex.",
+  "author": {
+    "name": "cognitive-disciplines project"
+  },
+  "homepage": "https://github.com/somebloke1/cognitive-disciplines",
+  "repository": "https://github.com/somebloke1/cognitive-disciplines",
+  "license": "MIT",
+  "keywords": [
+    "codex",
+    "skills",
+    "cognitive-cycle",
+    "multi-agent",
+    "governance"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Cognitive Cycle",
+    "shortDescription": "Run governed P1-P4 cognitive cycles.",
+    "longDescription": "Cognitive Cycle packages P1 Attend, P2 Inquire, P3 Judge, P4 Decide, same-phase integration roles, GitHub Project coordination, GraphQL efficiency guidance, durable packet contracts, and structural validation scripts for disciplined Codex agent cognition.",
+    "developerName": "cognitive-disciplines project",
+    "category": "Productivity",
+    "capabilities": [
+      "Skills",
+      "Scripts",
+      "Multi-agent coordination",
+      "Structural validation"
+    ],
+    "defaultPrompt": [
+      "Use $ep-cognitive-cycle to run a governed P1-P4 review.",
+      "Use $ep-p1-attend to characterize the evidence first.",
+      "Use $github-project-agent-coordination to update the board."
+    ]
+  }
+}
