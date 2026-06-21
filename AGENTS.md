@@ -16,6 +16,8 @@ Before major work, read:
 - @governance/operating-norms.md
 - @governance/github-project-dashboard.md
 - @governance/open_questions/0001-plugin-format-and-installation-target.md
+- @governance/open_questions/0002-gpt-5-x-mini-forward-test-availability.md
+- @governance/tasks/0002-plugin-scaffold-and-install.md
 
 ## GitHub Project Surface
 
