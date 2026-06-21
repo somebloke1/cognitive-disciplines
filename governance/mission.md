@@ -75,5 +75,6 @@ content.
 For model-generated structured JSON, validate JSON shape deterministically and
 evaluate the contained semantics with model or agent judgment.
 
-During development, agents performing cognitive cycles must use `gpt-5.x-mini`
-and only `gpt-5.x-mini`.
+During development, agents performing cognitive cycles must use the latest
+available `gpt-*.*-mini` model variant. The concrete model id must be recorded
+in the manifest and packets.

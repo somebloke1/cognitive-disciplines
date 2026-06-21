@@ -52,7 +52,9 @@ Cognitive judgment responsibilities:
 Do not confuse harness compliance with cognitive adequacy. A well-formed packet can still be weak.
 
 During development, cognitive-cycle phase agents and same-phase integration
-agents must use `gpt-5.x-mini` and only `gpt-5.x-mini`.
+agents must use the latest available `gpt-*.*-mini` model variant. Identify the
+current available model set, select the highest-version GPT mini model, and
+record the concrete model id in the manifest and packets.
 
 Do not evaluate language-model generated semantics with regex, pattern matching,
 keyword counts, or superficial label checks. Deterministic checks may validate

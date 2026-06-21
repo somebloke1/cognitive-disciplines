@@ -47,6 +47,8 @@ class CycleHarnessTests(unittest.TestCase):
                     "1",
                     "--agent-set",
                     "p1=a,b",
+                    "--available-agent-model",
+                    "gpt-5.4-mini",
                 ],
                 check=True,
                 capture_output=True,
@@ -56,10 +58,40 @@ class CycleHarnessTests(unittest.TestCase):
 
             self.assertTrue((archive / "manifest.json").exists())
             manifest = json.loads((archive / "manifest.json").read_text())
-            self.assertEqual(manifest["agent_model_policy"]["cognitive_cycle_agents"], "gpt-5.x-mini")
+            self.assertEqual(manifest["agent_model_policy"]["selection_rule"], "latest-available-gpt-mini")
+            self.assertEqual(manifest["agent_model_policy"]["selected_cognitive_cycle_agent"], "gpt-5.4-mini")
             self.assertFalse(manifest["semantic_evaluation_policy"]["regex_semantic_evaluation_allowed"])
 
             subprocess.run([sys.executable, str(VALIDATE_SCRIPT), str(archive)], check=True)
+
+    def test_init_selects_latest_available_mini_variant(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            result = subprocess.run(
+                [
+                    sys.executable,
+                    str(INIT_SCRIPT),
+                    "--archive-root",
+                    tmp,
+                    "--cycle-id",
+                    "cycle-latest-model",
+                    "--orienting-question",
+                    "What should be decided?",
+                    "--implicit-unknown",
+                    "Which evidence matters?",
+                    "--available-agent-model",
+                    "gpt-5.4-mini",
+                    "--available-agent-model",
+                    "gpt-5.12-mini",
+                    "--available-agent-model",
+                    "gpt-5.5",
+                ],
+                check=True,
+                capture_output=True,
+                text=True,
+            )
+            archive = Path(result.stdout.strip())
+            manifest = json.loads((archive / "manifest.json").read_text())
+            self.assertEqual(manifest["agent_model_policy"]["selected_cognitive_cycle_agent"], "gpt-5.12-mini")
 
     def test_validator_rejects_wrong_cycle_agent_model(self):
         with tempfile.TemporaryDirectory() as tmp:
@@ -75,6 +107,8 @@ class CycleHarnessTests(unittest.TestCase):
                     "What should be decided?",
                     "--implicit-unknown",
                     "Which evidence matters?",
+                    "--available-agent-model",
+                    "gpt-5.4-mini",
                 ],
                 check=True,
                 capture_output=True,
@@ -119,7 +153,48 @@ class CycleHarnessTests(unittest.TestCase):
             self.assertNotEqual(result.returncode, 0)
             report = json.loads(result.stdout)
             self.assertFalse(report["valid"])
-            self.assertIn("agent_model must be gpt-5.x-mini", "\n".join(report["errors"]))
+            self.assertIn("agent_model must be a concrete gpt-*.*-mini model id", "\n".join(report["errors"]))
+
+    def test_validator_rejects_non_latest_selected_mini_model(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            result = subprocess.run(
+                [
+                    sys.executable,
+                    str(INIT_SCRIPT),
+                    "--archive-root",
+                    tmp,
+                    "--cycle-id",
+                    "cycle-non-latest-model",
+                    "--orienting-question",
+                    "What should be decided?",
+                    "--implicit-unknown",
+                    "Which evidence matters?",
+                    "--available-agent-model",
+                    "gpt-5.4-mini",
+                    "--available-agent-model",
+                    "gpt-5.8-mini",
+                ],
+                check=True,
+                capture_output=True,
+                text=True,
+            )
+            archive = Path(result.stdout.strip())
+            manifest_path = archive / "manifest.json"
+            manifest = json.loads(manifest_path.read_text())
+            manifest["agent_model_policy"]["selected_cognitive_cycle_agent"] = "gpt-5.4-mini"
+            manifest_path.write_text(json.dumps(manifest, indent=2) + "\n")
+
+            result = subprocess.run(
+                [sys.executable, str(VALIDATE_SCRIPT), str(archive), "--json"],
+                check=False,
+                capture_output=True,
+                text=True,
+            )
+
+            self.assertNotEqual(result.returncode, 0)
+            report = json.loads(result.stdout)
+            self.assertFalse(report["valid"])
+            self.assertIn("selected_cognitive_cycle_agent must be the latest", "\n".join(report["errors"]))
 
 
 if __name__ == "__main__":

@@ -18,8 +18,10 @@ JSON structure. The meaning, quality, relevance, sufficiency, judgment, prose,
 and responsible decision content inside that JSON still require model or agent
 evaluation.
 
-During plugin development, agents performing cognitive cycles must use
-`gpt-5.x-mini` and only `gpt-5.x-mini`.
+During plugin development, agents performing cognitive cycles must use the
+latest available `gpt-*.*-mini` model variant. The controller must identify the
+current available model set, select the highest-version GPT mini model, and
+record the concrete model id used in the cycle manifest and packets.
 
 ## Rationale
 
@@ -49,5 +51,6 @@ capabilities.
 - Semantic review gates must be performed by an appropriate agent/model
   evaluator and should produce written review artifacts.
 - Multi-agent cognitive-cycle tests must configure P1, P2, P3, P4, and
-  same-phase integration agents with `gpt-5.x-mini`.
+  same-phase integration agents with the latest available `gpt-*.*-mini`
+  variant.
 - Non-cognitive structural automation may use ordinary deterministic tooling.

@@ -40,8 +40,9 @@ language-model generated cognitive work.
 Semantic acceptance requires model or agent judgment. For structured JSON,
 validate structure deterministically and evaluate the contents semantically.
 
-Agents performing cognitive cycles during development must use `gpt-5.x-mini`
-and only `gpt-5.x-mini`.
+Agents performing cognitive cycles during development must use the latest
+available `gpt-*.*-mini` model variant. The controller must identify the current
+available model set and record the selected concrete model id.
 
 ## GitHub Surface
 

@@ -1,6 +1,6 @@
 {
   "name": "cognitive-cycle",
-  "version": "0.1.0",
+  "version": "0.1.0+codex.20260621161213",
   "description": "Harnessed P1-P4 cognitive-cycle skills, packet contracts, and structural validators for Codex.",
   "author": {
     "name": "cognitive-disciplines project"

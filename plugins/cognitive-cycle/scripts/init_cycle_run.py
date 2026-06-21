@@ -5,12 +5,17 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
 from pathlib import Path
 
 
 VALID_MODES = {"recommend-only", "decision-only", "decide-and-enact"}
 VALID_SCALES = {"individual", "team", "legion"}
-REQUIRED_MODEL = "gpt-5.x-mini"
+DEFAULT_AVAILABLE_MODELS = tuple(
+    model.strip()
+    for model in os.environ.get("COGNITIVE_CYCLE_AVAILABLE_MODELS", "").split(",")
+    if model.strip()
+)
 
 
 def parse_agent_set(value: str) -> tuple[str, list[str]]:
@@ -21,6 +26,34 @@ def parse_agent_set(value: str) -> tuple[str, list[str]]:
     if not phase.strip() or not agents:
         raise argparse.ArgumentTypeError("agent sets require a phase and at least one agent")
     return phase.strip(), agents
+
+
+def parse_gpt_mini_version(model: str) -> tuple[int, ...] | None:
+    prefix = "gpt-"
+    suffix = "-mini"
+    if not model.startswith(prefix) or not model.endswith(suffix):
+        return None
+    version = model[len(prefix):-len(suffix)]
+    if "." not in version:
+        return None
+    parts: list[int] = []
+    for raw_part in version.split("."):
+        if not raw_part.isdigit():
+            return None
+        parts.append(int(raw_part))
+    return tuple(parts)
+
+
+def select_latest_gpt_mini(models: list[str]) -> str:
+    candidates = []
+    for model in models:
+        version = parse_gpt_mini_version(model)
+        if version is not None:
+            candidates.append((version, model))
+    if not candidates:
+        raise SystemExit("no available gpt-*.*-mini model found")
+    candidates.sort(key=lambda item: item[0])
+    return candidates[-1][1]
 
 
 def main() -> int:
@@ -35,6 +68,12 @@ def main() -> int:
     parser.add_argument("--recursion-budget", type=int, default=0)
     parser.add_argument("--phase-owner", action="append", default=[])
     parser.add_argument("--agent-set", type=parse_agent_set, action="append", default=[])
+    parser.add_argument(
+        "--available-agent-model",
+        action="append",
+        default=list(DEFAULT_AVAILABLE_MODELS),
+        help="Currently available model id; repeat to let the harness select the latest gpt-*.*-mini dynamically.",
+    )
     args = parser.parse_args()
 
     if args.recursion_budget < 0:
@@ -50,6 +89,9 @@ def main() -> int:
         directory.mkdir(parents=True, exist_ok=True)
 
     agent_sets = {phase: agents for phase, agents in args.agent_set}
+    if not args.available_agent_model:
+        raise SystemExit("provide current models with --available-agent-model or COGNITIVE_CYCLE_AVAILABLE_MODELS")
+    selected_agent_model = select_latest_gpt_mini(args.available_agent_model)
     manifest = {
         "cycle_id": args.cycle_id,
         "orienting_question": args.orienting_question,
@@ -62,7 +104,9 @@ def main() -> int:
         "scale": args.scale,
         "agent_sets": agent_sets,
         "agent_model_policy": {
-            "cognitive_cycle_agents": REQUIRED_MODEL,
+            "selection_rule": "latest-available-gpt-mini",
+            "available_agent_models": args.available_agent_model,
+            "selected_cognitive_cycle_agent": selected_agent_model,
             "exclusive": True,
         },
         "semantic_evaluation_policy": {

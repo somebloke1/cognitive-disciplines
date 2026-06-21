@@ -37,11 +37,12 @@ During development, all agents performing cognitive-cycle phases or same-phase
 integration must use:
 
 ```text
-gpt-5.x-mini
+latest available gpt-*.*-mini
 ```
 
-The manifest records this as `agent_model_policy.cognitive_cycle_agents` with
-`exclusive: true`. Packets must record `agent_model: "gpt-5.x-mini"`.
+The manifest records the current available model candidates and selected
+concrete mini model id under `agent_model_policy`, with `exclusive: true`.
+Packets must record that concrete model id in `agent_model`.
 
 ## Structural Validation
 

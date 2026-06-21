@@ -18,6 +18,7 @@ Before major work, read:
 - @governance/open_questions/0001-plugin-format-and-installation-target.md
 - @governance/open_questions/0002-gpt-5-x-mini-forward-test-availability.md
 - @governance/tasks/0002-plugin-scaffold-and-install.md
+- @governance/tasks/0003-gpt-mini-forward-test.md
 
 ## GitHub Project Surface
 
@@ -63,8 +64,10 @@ gates, recursion contracts, and controller transition rules.
   Structural checks may be deterministic; semantic checks require agent/model
   judgment. For structured JSON, validate structure deterministically and judge
   meaning separately.
-- During development, agents performing cognitive cycles must use
-  `gpt-5.x-mini` and only `gpt-5.x-mini`.
+- During development, agents performing cognitive cycles must use the latest
+  available `gpt-*.*-mini` model variant. Identify the current available model
+  set, select the highest-version GPT mini model, and record the concrete model
+  id in the manifest and packets.
 - Use Context7 or web_search when current external documentation or API behavior
   matters.
 - Avoid broad GitHub Project GraphQL scans; use targeted reads, cached IDs, and

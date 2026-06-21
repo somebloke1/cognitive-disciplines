@@ -15,7 +15,8 @@ Each phase agent should produce a brief grounding note before active work:
 - forbidden work acknowledged;
 - expected packet and handoff named.
 
-During development, cognitive-cycle agents use `gpt-5.x-mini` only.
+During development, cognitive-cycle agents use the latest available
+`gpt-*.*-mini` model variant only.
 
 ## P1 Attend
 

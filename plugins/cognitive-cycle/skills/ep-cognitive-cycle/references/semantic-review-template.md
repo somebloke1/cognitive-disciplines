@@ -9,7 +9,7 @@ or agent judgment artifact, not a deterministic structural check.
 ## Reviewer
 
 - reviewer:
-- model: gpt-5.x-mini
+- model: latest available gpt-*.*-mini concrete id
 - date:
 - cycle_id:
 - packet(s):
