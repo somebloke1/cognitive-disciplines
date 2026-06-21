@@ -1,4 +1,4 @@
-# Phronesis Packet Contract
+# Cognitive Cycle Packet Contract
 
 Use this contract when a P1-P4 cognitive cycle needs durable handoffs, team coordination, or legion-scale decomposition. It is a soft Codex harness: it gives structure and validation checkpoints, but the language model still performs the cognitive judgments.
 

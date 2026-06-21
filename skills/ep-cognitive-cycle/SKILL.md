@@ -1,6 +1,6 @@
 ---
 name: ep-cognitive-cycle
-description: Run a complete emergent-probability P1-P4 cognitive cycle for audits, source-material investigations, proposal evaluations, architecture decisions, prompt/curriculum design, and noetic-pi style Phronesis work. Use when Codex is asked to perform a full EP audit, combine P1/P2/P3/P4, preserve cognitive discipline, or produce a responsible decision from staged grounding.
+description: Run a complete emergent-probability P1-P4 cognitive cycle for audits, source-material investigations, proposal evaluations, architecture decisions, prompt/curriculum design, and disciplined cognitive-cycle work. Use when Codex is asked to perform a full EP audit, combine P1/P2/P3/P4, preserve cognitive discipline, or produce a responsible decision from staged grounding.
 ---
 
 # EP Cognitive Cycle
@@ -9,8 +9,8 @@ description: Run a complete emergent-probability P1-P4 cognitive cycle for audit
 
 Use this skill to run the full recursive cycle: P1 Attend -> P2 Inquire -> P3 Judge -> P4 Decide -> new P1 seed. The cycle is not a checklist. Each operation has a distinct job, and P3 owns recursion when evidence or alternatives are insufficient.
 
-Read [references/ep-discipline.md](references/ep-discipline.md) before running source-grounded EP audit or noetic-pi work.
-Use [references/phronesis-packet-contract.md](references/phronesis-packet-contract.md) for team, legion-scale, or any cycle that needs durable handoffs.
+Read [references/ep-discipline.md](references/ep-discipline.md) before running source-grounded EP audit or curriculum-derived cognitive-cycle work.
+Use [references/cognitive-cycle-packet-contract.md](references/cognitive-cycle-packet-contract.md) for team, legion-scale, or any cycle that needs durable handoffs.
 
 ## SuperLoop Stance
 
@@ -63,12 +63,12 @@ If the user has not specified mode, default to `recommend-only` unless they expl
 
 ## Grounding
 
-When the task concerns noetic-pi or EP audit source materials, ground before interpreting the mission:
+When the task concerns source curricula or EP audit source materials, ground before interpreting the mission:
 
 1. Read invariant and theoretical sources if present: `.method_sources/emergent_fidelity.txt`, `.method_sources/emergent_probability.txt`, `.method_sources/notion_of_development.txt`.
 2. Read operational objectifications: `.method/imperatives.md`, `.method/constitution.md`, `ROOT_PROMPT.md`.
 3. Read EP audit curriculum and prompts: `.method/curricula/emergent-probabilistics.json`, `.method/prompts/ep-audit-task.md`, `.method/prompts/twelve-properties.md`.
-4. Read project state records needed by the task: `PROJECT.md`, recent `LOG.md`, relevant `.ep-audit/`, `.phronesis/`, `.working/`, tests, schemas, and source files.
+4. Read project state records needed by the task: `PROJECT.md`, recent `LOG.md`, relevant audit directories, working directories, tests, schemas, and source files.
 
 This mirrors the EP auditor discipline: source materials first, mission-specific interpretation second.
 
