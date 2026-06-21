@@ -1,8 +1,9 @@
 # Task 0001: Establish Governance Baseline
 
-- `status`: in-progress
+- `status`: completed
 - `date`: 2026-06-21
 - `github`: https://github.com/somebloke1/cognitive-disciplines/issues/4
+- `commit`: c1c6f88
 
 ## Task
 
@@ -20,5 +21,5 @@ implementation.
 ## Verification
 
 - `git status --short` shows the governance files.
-- Files are committed in a governance baseline commit.
+- Files are committed in governance baseline commit `c1c6f88`.
 - GitHub issue #4 remains linked to the GitHub Project board.
