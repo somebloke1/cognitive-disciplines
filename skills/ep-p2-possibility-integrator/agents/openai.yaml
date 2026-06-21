@@ -1,0 +1,4 @@
+interface:
+  display_name: "EP P2 Possibility Integrator"
+  short_description: "Integrate multi-agent P2 possibility sets"
+  default_prompt: "Use $ep-p2-possibility-integrator to consolidate multiple P2 possibility packets before P3."

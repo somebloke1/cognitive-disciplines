@@ -1,0 +1,4 @@
+interface:
+  display_name: "EP P1 Data Curator"
+  short_description: "Curate multi-agent P1 evidence sets"
+  default_prompt: "Use $ep-p1-data-curator to consolidate multiple P1 evidence packets before P2."
