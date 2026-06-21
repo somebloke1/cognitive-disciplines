@@ -9,6 +9,7 @@ from pathlib import Path
 REPO_ROOT = Path(__file__).resolve().parents[1]
 INIT_SCRIPT = REPO_ROOT / "plugins" / "cognitive-cycle" / "scripts" / "init_cycle_run.py"
 VALIDATE_SCRIPT = REPO_ROOT / "plugins" / "cognitive-cycle" / "scripts" / "validate_cycle_artifacts.py"
+PLUGIN_SKILLS = REPO_ROOT / "plugins" / "cognitive-cycle" / "skills"
 
 
 class CycleHarnessTests(unittest.TestCase):
@@ -22,6 +23,16 @@ class CycleHarnessTests(unittest.TestCase):
             "harness-structural-contract.md",
         ):
             self.assertTrue((references / name).exists(), name)
+
+    def test_publishable_plugin_excludes_development_coordination_skills(self):
+        bundled_skills = {path.name for path in PLUGIN_SKILLS.iterdir() if path.is_dir()}
+        self.assertNotIn("github-project-agent-coordination", bundled_skills)
+        self.assertNotIn("graphql-efficiency-strategist", bundled_skills)
+
+        manifest = json.loads((REPO_ROOT / "plugins" / "cognitive-cycle" / ".codex-plugin" / "plugin.json").read_text())
+        manifest_text = json.dumps(manifest)
+        for term in ("GitHub Project", "GraphQL efficiency", "project board"):
+            self.assertNotIn(term, manifest_text)
 
     def test_init_creates_valid_empty_archive(self):
         with tempfile.TemporaryDirectory() as tmp:

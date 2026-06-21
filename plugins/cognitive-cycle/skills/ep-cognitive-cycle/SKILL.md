@@ -87,12 +87,12 @@ artifact from an agent/model evaluator.
 
 When the task concerns source curricula or EP audit source materials, ground before interpreting the mission:
 
-1. Read invariant and theoretical sources if present: `.method_sources/emergent_fidelity.txt`, `.method_sources/emergent_probability.txt`, `.method_sources/notion_of_development.txt`.
-2. Read operational objectifications: `.method/imperatives.md`, `.method/constitution.md`, `ROOT_PROMPT.md`.
-3. Read EP audit curriculum and prompts: `.method/curricula/emergent-probabilistics.json`, `.method/prompts/ep-audit-task.md`, `.method/prompts/twelve-properties.md`.
-4. Read project state records needed by the task: `PROJECT.md`, recent `LOG.md`, relevant audit directories, working directories, tests, schemas, and source files.
+1. Read authoritative theory, source curricula, or domain references when present.
+2. Read operating instructions, constitutions, root prompts, role definitions, or policy files that govern the work.
+3. Read task-specific prompts, rubrics, harness definitions, packet schemas, and acceptance criteria.
+4. Read project or material state records needed by the task: logs, prior reports, run archives, working directories, tests, schemas, source files, and unresolved issue records.
 
-This mirrors the EP auditor discipline: source materials first, mission-specific interpretation second.
+This mirrors the EP auditor discipline: authoritative materials first, mission-specific interpretation second.
 
 ## Cycle
 

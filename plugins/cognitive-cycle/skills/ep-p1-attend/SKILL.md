@@ -22,7 +22,7 @@ The soft harness supplies scope, packet shape, orienting question, implicit unkn
 1. Stabilize the scope and authority.
    - Identify the user request, artifacts, repository path, proposal, orienting question, and implicit unknown if present.
    - Prefer primary local sources over memory or paraphrase.
-   - For curriculum-derived EP audit work, inspect the relevant grounding sources before task interpretation when available: source theory, method imperatives, constitution, root prompt, EP audit curricula, EP audit prompts, and current project records.
+   - For curriculum-derived EP audit work, inspect the relevant grounding sources before task interpretation when available: source theory, operating instructions, constitutions, root prompts, role definitions, curricula, rubrics, task prompts, and current material records.
 
 2. Gather before interpreting.
    - Read the files, logs, prompts, tool definitions, tests, schemas, and prior reports that condition the task.

@@ -4,6 +4,12 @@
 
 Completed.
 
+## Supersession Note
+
+Task 0004 narrows the publishable plugin bundle. The root repository may still
+keep development-only GitHub Project and GraphQL coordination skills, but those
+skills are no longer part of the public `plugins/cognitive-cycle` package.
+
 ## Scope
 
 Transform the governed baseline into an initial repo-local Codex plugin that is
