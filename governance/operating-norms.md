@@ -31,6 +31,18 @@ plus harness mechanics. The plugin should therefore implement:
 
 Prompt text alone is not enough.
 
+## Semantic Evaluation Boundary
+
+Pattern matching, regex, keyword counts, and superficial label checks may only
+verify structure. They must not be used to evaluate the meaning or quality of
+language-model generated cognitive work.
+
+Semantic acceptance requires model or agent judgment. For structured JSON,
+validate structure deterministically and evaluate the contents semantically.
+
+Agents performing cognitive cycles during development must use `gpt-5.x-mini`
+and only `gpt-5.x-mini`.
+
 ## GitHub Surface
 
 Use GitHub issues and the `cognitive-disciplines-project` project board for

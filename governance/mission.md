@@ -63,3 +63,17 @@ acceptance gates, recursion budgets, routing, project tracking, and validation.
 Cognitive judgment includes evidence relevance, possibility distinctness,
 sufficiency judgment, recursion choice, responsible decision, and residual-risk
 assessment.
+
+## Evaluation Boundary
+
+Pattern matching and regex are unsuitable for semantic evaluation of
+language-model generated content. Use deterministic checks only for structure,
+schema, files, phase sequence, and manifest mechanics. Use model or agent
+judgment for meaning, quality, relevance, sufficiency, and responsible decision
+content.
+
+For model-generated structured JSON, validate JSON shape deterministically and
+evaluate the contained semantics with model or agent judgment.
+
+During development, agents performing cognitive cycles must use `gpt-5.x-mini`
+and only `gpt-5.x-mini`.

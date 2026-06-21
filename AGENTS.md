@@ -11,6 +11,7 @@ Before major work, read:
 - @governance/mission.md
 - @governance/README.md
 - @governance/decisions/0001-operate-as-governed-plugin-controller.md
+- @governance/decisions/0002-semantic-evaluation-and-cycle-agent-model.md
 - @governance/intentions/0001-develop-practices-and-norms-first.md
 - @governance/operating-norms.md
 - @governance/github-project-dashboard.md
@@ -56,6 +57,12 @@ gates, recursion contracts, and controller transition rules.
   commands, tests, GitHub issue/PR state, and project dashboard readback.
 - Keep deterministic harness mechanics separate from language-model cognitive
   judgment.
+- Never use regex or pattern matching to evaluate language-model semantics.
+  Structural checks may be deterministic; semantic checks require agent/model
+  judgment. For structured JSON, validate structure deterministically and judge
+  meaning separately.
+- During development, agents performing cognitive cycles must use
+  `gpt-5.x-mini` and only `gpt-5.x-mini`.
 - Use Context7 or web_search when current external documentation or API behavior
   matters.
 - Avoid broad GitHub Project GraphQL scans; use targeted reads, cached IDs, and
