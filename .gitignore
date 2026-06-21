@@ -1,0 +1,12 @@
+.venv/
+__pycache__/
+*.py[cod]
+*$py.class
+
+.codex/
+.project/
+.serena/
+
+.env
+.env.*
+!.env.example
