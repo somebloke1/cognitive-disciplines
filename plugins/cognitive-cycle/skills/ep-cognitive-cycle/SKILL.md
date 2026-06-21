@@ -12,17 +12,21 @@ Use this skill to run the full recursive cycle: P1 Attend -> P2 Inquire -> P3 Ju
 Read [references/ep-discipline.md](references/ep-discipline.md) before running source-grounded EP audit or curriculum-derived cognitive-cycle work.
 Use [references/cognitive-cycle-packet-contract.md](references/cognitive-cycle-packet-contract.md) for team, legion-scale, or any cycle that needs durable handoffs.
 Use [references/harness-structural-contract.md](references/harness-structural-contract.md) when creating or validating durable run archives.
+Use [references/curriculum-primers.md](references/curriculum-primers.md) before assigning specialist phase work.
+Use [references/acceptance-gates.md](references/acceptance-gates.md) and [references/controller-transition-matrix.md](references/controller-transition-matrix.md) when accepting, rejecting, repairing, or routing packets.
 
 ## SuperLoop Stance
 
 Operate as a patient controller. Treat the cycle as iterative research and refinement:
 
 1. Establish a manifest.
-2. Run the next bounded phase.
-3. Validate the packet.
-4. Integrate the accumulated record.
-5. Recurse when P3 requires it.
-6. Stop only when P4 can responsibly decide or the recursion budget is exhausted.
+2. Prime the phase with the relevant curriculum primer.
+3. Require a grounding note before active work.
+4. Run the next bounded phase.
+5. Validate the packet structurally and semantically.
+6. Integrate the accumulated record.
+7. Recurse when P3 requires it.
+8. Stop only when P4 can responsibly decide or the recursion budget is exhausted.
 
 Do not rush from first evidence to edits. A phase is complete only when its packet is strong enough for the next operation.
 
@@ -33,6 +37,7 @@ Soft harness responsibilities:
 - Maintain the cycle manifest.
 - Preserve phase order and accumulated packets.
 - Assign phase owners or subagents.
+- Require role acknowledgment and grounding before active work.
 - Enforce mode, recursion budget, packet validation, archive convention, and stop conditions.
 - Keep contradiction, duplicate, uncertainty, and decision registers for large runs.
 - Route same-phase multi-agent sets through the required integration skill before cross-phase handoff.

@@ -12,6 +12,17 @@ VALIDATE_SCRIPT = REPO_ROOT / "plugins" / "cognitive-cycle" / "scripts" / "valid
 
 
 class CycleHarnessTests(unittest.TestCase):
+    def test_plugin_contains_curriculum_harness_references(self):
+        references = REPO_ROOT / "plugins" / "cognitive-cycle" / "skills" / "ep-cognitive-cycle" / "references"
+        for name in (
+            "curriculum-primers.md",
+            "acceptance-gates.md",
+            "controller-transition-matrix.md",
+            "semantic-review-template.md",
+            "harness-structural-contract.md",
+        ):
+            self.assertTrue((references / name).exists(), name)
+
     def test_init_creates_valid_empty_archive(self):
         with tempfile.TemporaryDirectory() as tmp:
             result = subprocess.run(
