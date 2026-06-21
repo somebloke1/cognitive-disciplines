@@ -1,0 +1,4 @@
+interface:
+  display_name: "EP P3 Dialectician"
+  short_description: "Integrate multiple P3 judgment packets"
+  default_prompt: "Use $ep-p3-dialectician to reconcile multiple P3 judgments over the same possibilities."

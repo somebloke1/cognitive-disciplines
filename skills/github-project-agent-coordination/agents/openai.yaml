@@ -1,0 +1,4 @@
+version: 1
+display_name: "GitHub Project Coordination"
+short_description: "Coordinate issues, PRs, and Project #7 efficiently."
+default_prompt: "Use $github-project-agent-coordination to inspect and update GitHub Project #7 without wasting GraphQL budget."

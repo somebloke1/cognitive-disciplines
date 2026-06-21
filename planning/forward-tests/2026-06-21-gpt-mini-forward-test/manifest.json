@@ -1,0 +1,33 @@
+{
+  "cycle_id": "2026-06-21-gpt-mini-forward-test",
+  "orienting_question": "In mathematical practice, should 0^0 be treated as 1 by default?",
+  "implicit_unknown": "Whether the default convention should prioritize algebraic combinatorics, analysis, or explicit context-sensitive notation.",
+  "mode": "recommend-only",
+  "source_scope": [
+    "this prompt and the installed cognitive-cycle plugin contract"
+  ],
+  "recursion_budget": 1,
+  "phase_owners": [
+    "controller"
+  ],
+  "archive_target": "/home/dgk/workspace/cognitive-disciplines/planning/forward-tests/2026-06-21-gpt-mini-forward-test",
+  "scale": "individual",
+  "agent_sets": {},
+  "agent_model_policy": {
+    "selection_rule": "latest-available-gpt-mini",
+    "available_agent_models": [
+      "gpt-5.5",
+      "gpt-5.4",
+      "gpt-5.4-mini",
+      "gpt-5.3-codex-spark"
+    ],
+    "selected_cognitive_cycle_agent": "gpt-5.4-mini",
+    "exclusive": true
+  },
+  "semantic_evaluation_policy": {
+    "structural_checks": "deterministic",
+    "semantic_checks": "agent_or_model_judgment",
+    "regex_semantic_evaluation_allowed": false,
+    "json_structure_deterministic_semantics_model_judged": true
+  }
+}

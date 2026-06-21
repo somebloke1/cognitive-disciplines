@@ -1,0 +1,40 @@
+{
+  "pre_tasking": [
+    {
+      "title": "The Invariant Ground",
+      "instruction": "Read `.method_sources/emergent_fidelity.txt` and then `.method/imperatives.md`.\n\nThe first document is a synthetic constitution for agentic inquiry, unifying the invariant pattern of human cognition with the requirements of philosophically-grounded software development. The second is the formal operational articulation of the same pattern. Read both. When you have finished, reflect:\n\n- What is the normative pattern (the fourfold invariant levels)? Why is it called \"operationally invariant\" rather than \"transcendental\" — and what does that renaming signal about the project's orientation?\n- What does the structural mapping for multi-agent systems (Section III) tell you about how this pattern manifests in software architecture?\n- What is the existential recursion R(P1 → P2 → P3 → P4 → R)? What does \"intussusception\" mean — how does each emergent operation transform those that precede it?\n- What is \"interior alignment\"? What is \"simulated grasp\" and why is it a failure mode for an auditing agent specifically?\n- How does `imperatives.md` formally derive from and extend the synthesis — particularly the \"implication for framework development\" section?",
+      "deliverable": "Articulate the normative pattern (the fourfold invariant levels), the existential recursion, and why \"interior alignment\" and \"simulated grasp\" are critical concepts for an audit agent."
+    },
+    {
+      "title": "Emergent Probability",
+      "instruction": "Read `.method_sources/emergent_probability.txt`.\n\nThis document provides the theoretical framework you will apply to this project. It covers the core concept of emergent probability, six significance factors, nine essential assertions, and the twelve consequent properties — and closes with explicit Agent Operational Directives. Read it carefully. When you have finished, reflect:\n\n- What is a scheme of recurrence, and what is a conditioned series of schemes?\n- What are the twelve consequent properties? Identify which ones — breakdowns, blind alleys, narrowing distribution — are most likely to appear in an agent coordination system.\n- The document closes with \"Agent Operational Directives\" — seven specific analytical tasks. These are your analytical stance for this audit, not just reading material. Appropriate them: scheme identification, conditioned series mapping, probability assessment, blind alley detection, breakdown vulnerability, development path, scale and time reasoning. How will you apply each to this project?",
+      "deliverable": "Articulate the core framework of emergent probability, the twelve consequent properties, and the seven Agent Operational Directives you will apply."
+    },
+    {
+      "title": "The Notion of Development",
+      "instruction": "Read `.method_sources/notion_of_development.txt`.\n\nThis document provides the theoretical ground for understanding development as a flexible, linked sequence of increasingly differentiated higher integrations. Read it carefully. When you have finished, reflect:\n\n- What is the distinction between the Operator and the Integrator? How does a system shift from static integration (maintaining existing schemes) to dynamic integration (modifying its own manifold to provoke emergence)?\n- What is the principle of correspondence — how does a higher integration relate to its underlying manifold, and what happens when the manifold shifts?\n- What are the laws of integration — limitation, transcendence, and genuineness? How would you recognize arrested development or scotosis in an agent framework?\n- How do these principles bear on the twelve consequent properties you encountered in Stage 2 — particularly breakdowns, blind alleys, and narrowing distribution?",
+      "deliverable": "Articulate the distinction between Operator and Integrator functions, the principle of correspondence, and the three laws of integration."
+    },
+    {
+      "title": "The Operational Constitution",
+      "instruction": "Read `.method/constitution.md`.\n\nThis document describes how the invariant pattern articulated in `emergent_fidelity.txt` and `imperatives.md`, the probability framework in `emergent_probability.txt`, and the developmental principles in `notion_of_development.txt` are instantiated in an operational framework. Read it carefully. When you have finished, reflect:\n\n- How does the framework itself constitute a conditioned series of schemes?\n- Which schemes condition which other schemes?\n- What is the role of record-keeping as a foundational scheme?\n- How does this framework embody the principles from the source materials — particularly the operator/integrator distinction from the notion of development?",
+      "deliverable": "Identify how the framework constitutes a conditioned series, the role of record-keeping, and how the framework embodies the operator/integrator distinction."
+    },
+    {
+      "title": "The Living Directive",
+      "instruction": "Read `ROOT_PROMPT.md`.\n\nThis is the operational directive that governs agent activity. Read it carefully. When you have finished, reflect:\n\n- How does this document instantiate the constitution?\n- What operational principles does it establish?\n- How does it handle session re-entry, succession, and self-audit?",
+      "deliverable": "Explain how the living directive instantiates the constitution and what operational principles it establishes."
+    },
+    {
+      "title": "Project State — Structure and Operational Records",
+      "instruction": "Read `PROJECT.md` to understand the project's purpose, structure, and accomplishments.\n\nThen read the full history of all three operational record types via tools:\n- `list_questions('all')` — all questions (open and resolved); use `get_question(uid)` for detail on any item\n- `list_intentions('all')` — all abeyant intentions (active and honored); use `get_intention(id)` for detail\n- `list_decisions('all')` — all decisions (active and superseded); use `get_decision(id)` for detail\n\nThe full history matters for an EP audit: resolved questions, honored intentions, and superseded decisions reveal the project's developmental trajectory — what problems have been encountered and how they were addressed.",
+      "deliverable": "Characterize the project's purpose, structure, accomplishments, and developmental trajectory as revealed by the operational records."
+    },
+    {
+      "title": "Project State — Operational History",
+      "instruction": "Read the most recent 3 sessions from `LOG.md`.\n\nThe log archives older sessions — focus only on the recent entries visible in the current file (the unarchived sessions at the bottom). Do not attempt to read the archived sessions. When you have finished, reflect:\n\n- What has been done most recently?\n- What patterns do you notice in the recent development trajectory?\n- What decisions have been made and what problems have been solved?",
+      "deliverable": "Characterize the most recent developmental activity and the patterns it reveals."
+    }
+  ],
+  "post_tasking": null
+}
