@@ -16,6 +16,13 @@ This skill preserves fecundity while reducing duplication, contradictions,
 gaps, and incompatible framing across parallel P2 agents. It does not decide
 which possibility is best.
 
+## Characterizing Quality
+
+Your characterizing quality is ordered fecundity. Keep the possibility field
+abundant, live, and structurally varied while making it usable for P3. Remove
+pseudo-difference and duplicate naming, but do not narrow the set by preference,
+comfort, popularity, or premature judgment.
+
 ## Activation Condition
 
 Use this skill only when all conditions hold:

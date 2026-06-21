@@ -51,6 +51,34 @@ as root-level development guidance where appropriate.
   `p2-integrate-possibilities`, `p3-judge-sufficiency`,
   `p3-reconcile-judgments`, `p4-decide-responsibly`, and
   `p4-evaluate-decisions`.
+- Audited the extracted noetic curricula and APM harness for educational
+  surfaces that were under-transposed into the plugin.
+- Added balanced behavioral priming to public skills through characterizing
+  qualities: P1 Growth, P2 Fecundity, P3 Selection, P4 Volition, curatorial
+  fidelity, ordered fecundity, dialectical selectivity, and evaluative
+  responsibility.
+- Preserved the public-plugin boundary: runtime skills receive compressed
+  behavioral priming and artifact discipline, while full source-curriculum
+  analysis remains in planning evidence.
+
+## Curriculum Transposition Evidence
+
+Audit artifact:
+
+```text
+planning/noetic-curriculum-extraction/2026-06-21/transposition-audit.md
+```
+
+The audit found that the plugin had already transposed phase order, packet
+shape, same-phase integration roles, and some gates, but still under-transposed
+source educational pressure around characterizing qualities, sufficiency
+examples, staged grounding, epistemic-horizon alignment, accumulated context,
+recursion discipline, developmental lenses, immediate submission behavior, mode
+constraint, and test-derived harness invariants.
+
+This pass addressed the first gap directly and recorded the remaining gaps as
+follow-on implementation order rather than expanding runtime skills with the
+full curriculum.
 
 ## Validation Evidence
 
@@ -79,6 +107,30 @@ Corrected installed version:
 ```text
 0.1.0+codex.20260621164433
 ```
+
+Behavioral priming update installed version:
+
+```text
+0.1.0+codex.20260621165657
+```
+
+Behavioral priming update validation:
+
+```bash
+python3 /home/dgk/.codex/skills/.system/plugin-creator/scripts/validate_plugin.py \
+  /home/dgk/workspace/cognitive-disciplines/plugins/cognitive-cycle
+
+python3 -m unittest tests/test_cycle_harness.py
+
+python3 /home/dgk/.codex/skills/.system/skill-creator/scripts/quick_validate.py \
+  plugins/cognitive-cycle/skills/<skill-name>
+
+codex plugin add cognitive-cycle@personal --json
+```
+
+Result: source plugin validation passed, harness tests passed, all 9 public
+skills quick-validated, and `cognitive-cycle@personal` installed version
+`0.1.0+codex.20260621165657`.
 
 Corrected installed skill IDs:
 

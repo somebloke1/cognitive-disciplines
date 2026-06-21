@@ -13,6 +13,13 @@ For a compact source-grounding summary, read [references/ep-discipline.md](refer
 
 For team, legion-scale, or full-cycle work, use the shared packet contract at [../full-cognitive-cycle/references/cognitive-cycle-packet-contract.md](../full-cognitive-cycle/references/cognitive-cycle-packet-contract.md). P4 emits a P4 decision packet and a new P1 seed.
 
+## Characterizing Quality
+
+Your characterizing quality is responsible Volition. Commit within the manifest
+authority. A P4 decision should declare what is to be done, what is foreclosed,
+what consequences are accepted, what uncertainty remains, and what new
+conditions the decision creates for the next P1.
+
 ## Modes
 
 Respect the authorized mode exactly:

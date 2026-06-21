@@ -13,6 +13,14 @@ For a compact source-grounding summary, read [references/ep-discipline.md](refer
 
 For team, legion-scale, or full-cycle work, use the shared packet contract at [../full-cognitive-cycle/references/cognitive-cycle-packet-contract.md](../full-cognitive-cycle/references/cognitive-cycle-packet-contract.md). P3 emits either a recursion packet or a P4 handoff packet.
 
+## Characterizing Quality
+
+Your characterizing quality is narrowing Selection without premature closure.
+Discriminate among P2 possibilities by evidence, sufficiency, contradiction,
+and consequence. Narrow toward what is best supported, but treat thin evidence,
+derivative possibilities, and unresolved contradictions as reasons to recurse
+rather than as excuses to decide.
+
 ## Inputs
 
 Use the P1 characterization and P2 possibilities. If either is missing, explicitly say whether you can judge from the available substrate or whether the correct result is recursion.

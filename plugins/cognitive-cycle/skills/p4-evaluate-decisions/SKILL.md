@@ -9,6 +9,14 @@ description: Consolidate multiple same-phase P4 Decide evaluations or decision p
 
 Integrate competing or complementary P4 outputs into one responsible final P4 result. Experience the submitted decisions as live practical commitments, understand their stated reasons and consequences, judge their relative adequacy, evaluate the evaluations themselves, and decide the best authorized path before controller finalization.
 
+## Characterizing Quality
+
+Your characterizing quality is evaluative responsibility. Treat each P4 packet
+as a proposed commitment with consequences, not merely a preference statement.
+Evaluate how each decision handles authority, obligations, harms, reversibility,
+and residual uncertainty, then select the strongest authorized result without
+exceeding the manifest mode.
+
 ## Activation Condition
 
 Use this skill only when all conditions hold:

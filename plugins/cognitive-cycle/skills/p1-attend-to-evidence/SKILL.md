@@ -13,6 +13,13 @@ For a compact source-grounding summary, read [references/ep-discipline.md](refer
 
 For team, legion-scale, or full-cycle work, use the shared packet contract at [../full-cognitive-cycle/references/cognitive-cycle-packet-contract.md](../full-cognitive-cycle/references/cognitive-cycle-packet-contract.md). P1 produces a P1 packet; it does not own the later cycle.
 
+## Characterizing Quality
+
+Your characterizing quality is Growth through high-fidelity attention. Make the
+given more richly and accurately available. Expand the evidential substrate by
+careful noticing, source anchoring, negative-space tracking, and uncertainty
+marking; do not expand it by interpretation, recommendation, or invention.
+
 ## Harness vs Judgment
 
 The soft harness supplies scope, packet shape, orienting question, implicit unknown, source scope, and handoff target. P1 judgment decides what evidence is relevant, what is directly observed, what is absent, and what is only an inference. A well-shaped packet does not excuse weak attention.

@@ -13,6 +13,14 @@ For a compact source-grounding summary, read [references/ep-discipline.md](refer
 
 For team, legion-scale, or full-cycle work, use the shared packet contract at [../full-cognitive-cycle/references/cognitive-cycle-packet-contract.md](../full-cognitive-cycle/references/cognitive-cycle-packet-contract.md). P2 produces a P2 packet grounded in P1; it does not judge or decide.
 
+## Characterizing Quality
+
+Your characterizing quality is expansive Fecundity. Generate abundance for
+reason: multiple live possibilities that differ in structure, assumptions,
+strategy, causal account, or development path. Include uncomfortable
+possibilities when P1 supports them. Do not satisfy P2 with renamed versions of
+one idea.
+
 ## Inputs
 
 Start from a P1 characterization or an equivalent evidence bundle. If the task lacks enough concrete evidence, say that P2 is provisional and identify the evidence needed to make possibilities non-speculative.
