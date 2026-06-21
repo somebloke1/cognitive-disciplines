@@ -1,0 +1,4 @@
+version: 1
+display_name: "GraphQL Efficiency"
+short_description: "Shape GraphQL reads and mutations with rate-limit discipline."
+default_prompt: "Use $graphql-efficiency-strategist to plan efficient GraphQL queries or GitHub ProjectV2 updates."
