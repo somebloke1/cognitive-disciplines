@@ -35,6 +35,9 @@ Every full cycle should establish:
 - `source_scope`: files, repos, logs, prompts, docs, tools, or external sources in bounds.
 - `recursion_budget`: total allowed recursions and any per-scope limits.
 - `phase_owners`: single agent, named subagents, or controller-owned phases.
+- `same_phase_differentiation`: required when any phase level has multiple
+  agents; map each peer agent to its focal emphasis, source or packet scope,
+  and intended contribution.
 - `archive_target`: where accumulated packets and decisions will be recorded, if any.
 - `scale`: `individual`, `team`, or `legion`.
 
@@ -46,6 +49,8 @@ Every phase packet should start with:
 - `phase`: `p1`, `p2`, `p3`, or `p4`
 - `pass`: positive integer
 - `owner`: agent or controller identity when known
+- `focal_emphasis`: required for same-phase multi-agent work; omit or mark
+  `single-agent` for ordinary individual phases
 - `orienting_question`
 - `implicit_unknown`
 - `source_scope`
@@ -160,6 +165,19 @@ Controller authority includes splitting scopes, merging compatible packets, retu
 
 Use same-phase integration only when a given level has more than one agent in the set. Do not insert these roles into ordinary single-agent P1, P2, P3, or P4 cycles.
 
+For multi-agent levels, peer agents should be differentiated before dispatch:
+
+- P1 peers vary by attentional coverage: source strata, tools, evidence type,
+  provenance, absence, contradiction, or boundary condition.
+- P2 peers vary by creative/formulative impetus: architecture, governance,
+  failure mode, emergence path, conservative formulation, disruptive
+  formulation, or boundary expansion.
+- P3 peers vary by adversarial judgment posture: affirmative sufficiency,
+  skeptical insufficiency, contradiction review, burden of proof, comparative
+  warrant ranking, or recursion-first review.
+- P4 peers vary by value emphasis: prudence, fairness, effectiveness, future
+  optionality, constraint fidelity, or user-intent stewardship.
+
 The four integration roles are separate skills:
 
 - `p1-curate-evidence`: consolidate multiple P1 packets into one curated dataset for P2.
@@ -172,9 +190,13 @@ Each same-phase integration packet should include:
 - Common packet header.
 - `integration_level`: `p1-data-curation`, `p2-possibility-integration`, `p3-dialectic`, or `p4-ethical-integration`.
 - `peer_packets`: packet ids or summaries integrated.
+- `peer_focal_emphases`: each peer agent's assigned differentiation and actual
+  contribution.
 - `consolidation_method`: how duplicates, conflicts, minority reports, and uncertainty were handled.
 - `integrated_output`: curated dataset, coherent possibility set, affirmed judgment set, or best authorized decision.
 - `preserved_minority_reports`: contested evidence, possibilities, judgments, or evaluations that should not be erased.
+- `differentiation_account`: how the integration preserved, merged, bracketed,
+  or rejected each focal contribution.
 - `forbidden_work_check`: confirmation that the integrator did not generate out-of-scope data or perform a later phase prematurely.
 - `handoff_target`: next phase or controller finalization.
 

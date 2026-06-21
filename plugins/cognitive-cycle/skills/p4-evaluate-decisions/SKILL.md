@@ -44,6 +44,7 @@ Treat the harness as binding. Use judgment only inside its authority. If the bes
 3. Identify the same-phase P4 packets being integrated and ignore non-member packets unless needed as background.
 4. For each packet, extract:
    - proposed decision or recommendation
+   - value emphasis and stated priority ordering
    - reasons and evidence
    - assumptions and uncertainties
    - ethical stakes, harms, benefits, reversibility, and affected parties
@@ -54,6 +55,8 @@ Treat the harness as binding. Use judgment only inside its authority. If the bes
    - Which recognizes uncertainty without evading commitment?
    - Which is executable within authority?
    - Which avoids avoidable harm while preserving the needed decision force?
+   - Which value emphasis is appropriate to this decision rather than merely
+     attractive in isolation?
 6. Decide one of:
    - adopt one packet
    - synthesize a stronger packet from several
@@ -72,9 +75,12 @@ Return a compact integration packet:
 - `mode`: requested mode.
 - `authority`: manifest or controller boundary used.
 - `same_phase_set`: packets or agents integrated.
+- `value_emphases`: the value lenses represented by the P4 packets.
 - `selected_result`: adopted, synthesized, narrowed, or escalated result.
 - `reason`: why this result is ethically and practically strongest.
 - `rejected_or_modified`: key alternatives rejected or changed, with short reasons.
+- `value_evaluation`: how the sage evaluated the competing value emphases and
+  priority orderings.
 - `residual_risks`: material uncertainty, harm, dissent, or reversibility concerns.
 - `enactment`: `none`, `not authorized`, or exact authorized action taken.
 - `sufficiency`: whether the packet is ready for controller finalization.
@@ -87,6 +93,8 @@ Return a compact integration packet:
 - Do not enact in `decision-only`.
 - Do not treat consensus as sufficient when the shared reasoning is weak.
 - Do not erase important minority objections.
+- Do not treat a value emphasis as self-justifying; evaluate whether that value
+  belongs in priority for this decision and authority.
 - Do not import outside objectives that are not present in the manifest, controller request, or packets.
 - Do not reopen P1, P2, or P3 work except to identify insufficiency or request escalation.
 

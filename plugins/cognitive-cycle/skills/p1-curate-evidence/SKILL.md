@@ -56,11 +56,12 @@ the packet set.
 
 1. Establish scope.
    Identify the shared P1 level, the agents represented, the packet boundaries,
-   and the intended P2 handoff.
+   their attentional focal emphases, and the intended P2 handoff.
 
 2. Inventory packets.
    List the evidence, data, experience reports, observations, metadata, and
-   provenance supplied by each packet.
+   provenance supplied by each packet. Preserve how each agent's source,
+   tool, absence, contradiction, or provenance focus shaped what it noticed.
 
 3. Normalize without erasing provenance.
    Merge equivalent observations, preserve source references, and keep distinct
@@ -87,9 +88,12 @@ the packet set.
 Return a concise integration artifact with these sections:
 
 - Scope: the P1 level, packet set, and curation boundary.
+- Peer attentional foci: each P1 agent's assigned focus and actual contribution.
 - Included dataset: consolidated observations with provenance.
 - Exclusions: omitted material and the reason for omission.
 - Tensions: conflicts, ambiguities, weak evidence, or unresolved differences.
+- Differentiation account: how source/tool/provenance differences were
+  preserved, merged, bracketed, or rejected.
 - Missing evidence: only if needed, phrased as targeted P1 recursion requests.
 - Sufficiency decision: "sufficient for P2" or "requires P1 recursion".
 - Handoff note: the bounded dataset P2 may use.

@@ -13,6 +13,7 @@ Read [references/ep-discipline.md](references/ep-discipline.md) before running s
 Use [references/cognitive-cycle-packet-contract.md](references/cognitive-cycle-packet-contract.md) for team, legion-scale, or any cycle that needs durable handoffs.
 Use [references/harness-structural-contract.md](references/harness-structural-contract.md) when creating or validating durable run archives.
 Use [references/curriculum-primers.md](references/curriculum-primers.md) before assigning specialist phase work.
+Use [references/same-phase-differentiation.md](references/same-phase-differentiation.md) when assigning more than one agent to a single P1, P2, P3, or P4 level.
 Use [references/acceptance-gates.md](references/acceptance-gates.md) and [references/controller-transition-matrix.md](references/controller-transition-matrix.md) when accepting, rejecting, repairing, or routing packets.
 
 ## SuperLoop Stance
@@ -37,6 +38,8 @@ Soft harness responsibilities:
 - Maintain the cycle manifest.
 - Preserve phase order and accumulated packets.
 - Assign phase owners or subagents.
+- Differentiate same-phase agents by explicit focal emphasis when a level has
+  more than one agent.
 - Require role acknowledgment and grounding before active work.
 - Enforce mode, recursion budget, packet validation, archive convention, and stop conditions.
 - Keep contradiction, duplicate, uncertainty, and decision registers for large runs.
@@ -133,13 +136,13 @@ Use subagents only when the user asked for delegation or parallel agent work and
 
 Controller protocol:
 
-1. Assign P1 to evidence characterization with source scope and packet contract.
+1. Assign P1 to evidence characterization with source scope and packet contract. When using multiple P1 agents, differentiate them by attentional coverage: source strata, tool pathway, evidential question, provenance, absence, contradiction, or boundary condition.
 2. If more than one P1 agent produced packets, run `p1-curate-evidence` to consolidate the P1 set before P2. Skip this for a single P1 agent.
-3. Assign P2 only after a single P1 packet or curated P1 dataset exists.
+3. Assign P2 only after a single P1 packet or curated P1 dataset exists. When using multiple P2 agents, differentiate them by creative and formulative impetus: architecture, governance, failure mode, emergence path, conservative formulation, disruptive formulation, or boundary expansion.
 4. If more than one P2 agent produced packets, run `p2-integrate-possibilities` to consolidate the P2 set before P3. Skip this for a single P2 agent.
-5. Assign P3 with P1 and P2 packets; require exactly one outcome: return to P1, return to P2, or advance to P4.
+5. Assign P3 with P1 and P2 packets; require exactly one outcome: return to P1, return to P2, or advance to P4. When using multiple P3 agents, differentiate them by adversarial judgment posture: affirmative sufficiency, skeptical insufficiency, contradiction review, burden-of-proof review, comparative warrant ranking, or recursion-first review.
 6. If more than one P3 agent judged the same substrate, run `p3-reconcile-judgments` to consolidate the P3 judgments before P4. Skip this for a single P3 agent.
-7. Assign P4 only with manifest, accumulated record, and P3 handoff.
+7. Assign P4 only with manifest, accumulated record, and P3 handoff. When using multiple P4 agents, differentiate them by value emphasis within authority: prudence, fairness, effectiveness, future optionality, constraint fidelity, or user-intent stewardship.
 8. If more than one P4 agent produced evaluations, run `p4-evaluate-decisions` to decide the best authorized decision before controller finalization. Skip this for a single P4 agent.
 9. Validate each returned packet before routing it forward.
 10. Merge outputs by evidence anchors and preserve minority reports when genuine uncertainty remains.
@@ -152,14 +155,14 @@ Same-phase integration roles consolidate peer outputs at one level; they do not 
 For many agents or repeated cycles over a codebase/material set:
 
 1. Decompose the source scope into strata, modules, documents, or problem slices.
-2. Run parallel P1 passes on disjoint scopes.
+2. Run parallel P1 passes on disjoint scopes or differentiated attentional/tool foci.
 3. When a scope has multiple P1 packets, route them through `p1-curate-evidence` before P2.
 4. Build an accumulated packet index and contradiction register.
-5. Run P2 passes per scope or across related scopes; check duplicates and surface variants.
+5. Run P2 passes per scope or across related scopes with differentiated creative/formulative impetus; check duplicates and surface variants.
 6. When a scope has multiple P2 packets, route them through `p2-integrate-possibilities` before P3.
-7. Run P3 passes to judge sufficiency, reconcile contradictions, select paths, and route recursion.
+7. Run P3 passes with competing judgment postures to test sufficiency, reconcile contradictions, select paths, and route recursion.
 8. When a scope has multiple P3 packets over the same possibilities, route them through `p3-reconcile-judgments` before P4.
-9. Run P4 decisions only for scopes with sufficient P3 handoffs.
+9. Run P4 decisions only for scopes with sufficient P3 handoffs, differentiating multiple P4 agents by responsible value emphasis.
 10. When a scope has multiple P4 evaluations, route them through `p4-evaluate-decisions` before controller finalization.
 11. Feed each P4 new P1 seed into the next cycle.
 

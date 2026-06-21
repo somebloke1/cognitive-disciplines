@@ -61,16 +61,18 @@ The dialectician's judgment is meta-P3 judgment:
 
 2. Inventory each P3 judgment.
    For each agent, extract the selected possibility, rejected alternatives,
-   warrant, confidence or sufficiency claim, and stated uncertainties.
+   adversarial posture, warrant, confidence or sufficiency claim, and stated
+   uncertainties.
 
 3. Compare judgment structure.
    Mark convergence, direct conflict, compatible emphasis, missing premises,
-   unsupported leaps, and any drift away from the shared substrate.
+   unsupported leaps, changes in burden of proof, and any drift away from the
+   shared substrate.
 
 4. Judge the judgments.
    Prefer the judgment or synthesis that best satisfies the P3 standard:
    substrate fidelity, warrant strength, comparative discrimination,
-   treatment of uncertainty, and readiness for P4.
+   treatment of uncertainty, adversarial pressure, and readiness for P4.
 
 5. Produce the handoff or recurse.
    If one consolidated judgment is sufficient, hand it to P4. If not, issue a
@@ -82,8 +84,11 @@ The dialectician's judgment is meta-P3 judgment:
 Return a concise artifact with these sections:
 
 - `Substrate`: the common P1/P2 basis being integrated.
-- `Judgment Set`: one line per P3 agent, preserving the distinct claims.
+- `Judgment Set`: one line per P3 agent, preserving the distinct claims and
+  adversarial postures.
 - `Dialectical Comparison`: convergence, conflict, warrant gaps, and drift.
+- `Differentiation Account`: how competing judgment postures were preserved,
+  reconciled, bracketed, or rejected.
 - `Affirmed P3 Judgment`: the consolidated judgment P4 may inherit.
 - `P4 Handoff`: what P4 can decide from, plus live cautions.
 - `Recursion Instruction`: omit if sufficient; otherwise give the exact phase
@@ -97,6 +102,8 @@ the next agent to act without reinterpreting the failure.
 
 - Do not make the final P4 decision.
 - Do not collapse conflicting P3 judgments by averaging or compromise language.
+- Do not neutralize adversarial judgments merely because they complicate
+  handoff.
 - Do not add new P1 evidence unless explicitly supplied.
 - Do not generate new P2 possibilities except to name a required P2 recursion.
 - Do not treat a single P3 judgment as a same-phase integration problem.

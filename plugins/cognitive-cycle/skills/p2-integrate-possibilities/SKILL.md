@@ -55,7 +55,7 @@ that P3 will evaluate.
 
 1. Gather the packets.
    Identify each source packet, its stated possibilities, assumptions,
-   constraints, and any confidence language or caveats.
+   constraints, focal creative impetus, and any confidence language or caveats.
 
 2. Experience the field.
    Read the packets as a whole before sorting. Notice recurring patterns,
@@ -69,7 +69,8 @@ that P3 will evaluate.
 4. Judge distinctness.
    Merge possibilities only when their practical meaning is the same.
    Preserve variants when they differ in mechanism, scope, risk posture,
-   implementation path, stakeholder impact, or underlying assumption.
+   implementation path, stakeholder impact, underlying assumption, or authentic
+   creative/formulative line.
 
 5. Decide the set structure.
    Choose an organizing structure that makes P3 evaluation easier without
@@ -80,7 +81,8 @@ that P3 will evaluate.
 6. Integrate gaps and tensions.
    Add a missing possibility only when it is directly implied by the packet
    set. Mark unresolved tensions explicitly rather than hiding them inside a
-   forced synthesis.
+   forced synthesis. Do not truncate a live creative line merely because it is
+   unusual, underdeveloped, or inconvenient for a tidy set.
 
 7. Prepare the P3 handoff.
    Produce a clean consolidated possibility set with traceability back to
@@ -91,12 +93,15 @@ that P3 will evaluate.
 Return:
 
 - Scope: the P2 level and same-phase packet set being integrated.
+- Peer creative foci: each P2 agent's formulative emphasis and contribution.
 - Integration basis: the organizing principle used for the consolidated set.
 - Consolidated possibilities: numbered possibilities with concise names,
   neutral descriptions, source packet references, and key assumptions.
 - Preserved tensions: conflicts or incompatibilities P3 should evaluate.
 - Added gap-fill possibilities: any integrator-added possibilities, each
   labeled as inferred from the packet set.
+- Differentiation account: authentic creative lines preserved, merged,
+  bracketed, or rejected, with reasons.
 - P3 handoff notes: evaluation questions or criteria suggested by the set,
   without answering them.
 
@@ -109,6 +114,7 @@ Do not:
 - Select winners or eliminate live alternatives because they seem weaker.
 - Convert P2 integration into P3 evaluation.
 - Hide meaningful disagreement by averaging it into bland consensus.
+- Arbitrarily truncate authentic creativity to make the set look tidy.
 - Add possibilities unrelated to the submitted packets.
 - Use this skill for a single P2 agent's output.
 

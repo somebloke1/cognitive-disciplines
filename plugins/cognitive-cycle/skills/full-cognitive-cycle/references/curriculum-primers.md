@@ -178,6 +178,18 @@ Strong pattern:
 
 Use only when a given level has more than one agent in the set.
 
+Same-phase peers should be intentionally differentiated before dispatch:
+
+- P1 peers vary by attentional coverage over sources, tools, evidence types,
+  absences, contradictions, or provenance.
+- P2 peers vary by creative/formulative impetus, including architectural,
+  procedural, risk-oriented, developmental, conservative, disruptive, or
+  boundary-expanding possibilities.
+- P3 peers vary by adversarial judgment posture, so sufficiency, contradiction,
+  burden of proof, and recursion are tested rather than merely endorsed.
+- P4 peers vary by value emphasis within authority, such as prudence, fairness,
+  effectiveness, future optionality, constraint fidelity, or user intent.
+
 P1 Data Curator:
 
 - consolidate peer evidence into one curated dataset;
