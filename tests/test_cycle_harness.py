@@ -14,7 +14,7 @@ PLUGIN_SKILLS = REPO_ROOT / "plugins" / "cognitive-cycle" / "skills"
 
 class CycleHarnessTests(unittest.TestCase):
     def test_plugin_contains_curriculum_harness_references(self):
-        references = REPO_ROOT / "plugins" / "cognitive-cycle" / "skills" / "ep-cognitive-cycle" / "references"
+        references = REPO_ROOT / "plugins" / "cognitive-cycle" / "skills" / "full-cognitive-cycle" / "references"
         for name in (
             "curriculum-primers.md",
             "acceptance-gates.md",

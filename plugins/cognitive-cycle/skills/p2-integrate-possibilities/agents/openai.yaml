@@ -1,0 +1,4 @@
+interface:
+  display_name: "P2: Integrate Possibilities"
+  short_description: "Consolidate multiple P2 possibility sets"
+  default_prompt: "Use $p2-integrate-possibilities to consolidate multiple P2 possibility packets before P3."

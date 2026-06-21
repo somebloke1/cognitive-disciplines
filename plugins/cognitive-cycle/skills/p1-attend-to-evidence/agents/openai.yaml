@@ -1,0 +1,4 @@
+interface:
+  display_name: "P1: Attend to Evidence"
+  short_description: "Characterize what is given before interpretation"
+  default_prompt: "Use $p1-attend-to-evidence to characterize the given evidence before interpretation."

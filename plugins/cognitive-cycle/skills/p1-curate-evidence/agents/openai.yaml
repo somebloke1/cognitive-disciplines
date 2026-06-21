@@ -1,0 +1,4 @@
+interface:
+  display_name: "P1: Curate Evidence"
+  short_description: "Consolidate multiple P1 evidence packets"
+  default_prompt: "Use $p1-curate-evidence to consolidate multiple P1 evidence packets before P2."

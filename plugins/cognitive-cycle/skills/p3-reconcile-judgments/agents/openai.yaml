@@ -1,0 +1,4 @@
+interface:
+  display_name: "P3: Reconcile Judgments"
+  short_description: "Consolidate multiple P3 judgment packets"
+  default_prompt: "Use $p3-reconcile-judgments to reconcile multiple P3 judgments over the same possibilities."

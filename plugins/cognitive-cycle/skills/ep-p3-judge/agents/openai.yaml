@@ -1,4 +1,0 @@
-interface:
-  display_name: "EP P3 Judge"
-  short_description: "Judge EP audit possibilities and recurse"
-  default_prompt: "Use $ep-p3-judge to assess evidence, possibilities, and recursion needs."

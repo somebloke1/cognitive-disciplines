@@ -1,0 +1,4 @@
+interface:
+  display_name: "P2: Inquire Possibilities"
+  short_description: "Generate grounded alternative possibilities"
+  default_prompt: "Use $p2-inquire-possibilities to generate grounded alternatives from a P1 characterization."

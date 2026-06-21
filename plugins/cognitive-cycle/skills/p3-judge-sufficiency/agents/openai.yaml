@@ -1,0 +1,4 @@
+interface:
+  display_name: "P3: Judge Sufficiency"
+  short_description: "Assess evidence, possibilities, and recursion"
+  default_prompt: "Use $p3-judge-sufficiency to assess evidence, possibilities, and recursion needs."

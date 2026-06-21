@@ -1,4 +1,0 @@
-interface:
-  display_name: "EP P2 Inquire"
-  short_description: "Generate grounded EP audit possibilities"
-  default_prompt: "Use $ep-p2-inquire to generate grounded alternatives from a P1 characterization."

@@ -44,6 +44,13 @@ as root-level development guidance where appropriate.
 - Corrected the local Desktop Personal marketplace setup after verification
   showed the CLI marketplace named `personal` had been pointing at the repo
   root instead of the documented home personal marketplace.
+- Renamed the publishable plugin skill IDs from terse `ep-*` names to
+  phase-action names that render clearly in the Desktop skill list:
+  `full-cognitive-cycle`, `p1-attend-to-evidence`,
+  `p1-curate-evidence`, `p2-inquire-possibilities`,
+  `p2-integrate-possibilities`, `p3-judge-sufficiency`,
+  `p3-reconcile-judgments`, `p4-decide-responsibly`, and
+  `p4-evaluate-decisions`.
 
 ## Validation Evidence
 
@@ -52,6 +59,46 @@ Source plugin validation:
 ```bash
 python3 /home/dgk/.codex/skills/.system/plugin-creator/scripts/validate_plugin.py \
   /home/dgk/workspace/cognitive-disciplines/plugins/cognitive-cycle
+```
+
+Result: passed.
+
+Skill-name presentation correction:
+
+```bash
+python3 /home/dgk/.codex/skills/.system/plugin-creator/scripts/update_plugin_cachebuster.py \
+  /home/dgk/workspace/cognitive-disciplines/plugins/cognitive-cycle
+rm -rf /home/dgk/.codex/plugins/cognitive-cycle
+cp -a /home/dgk/workspace/cognitive-disciplines/plugins/cognitive-cycle \
+  /home/dgk/.codex/plugins/cognitive-cycle
+codex plugin add cognitive-cycle@personal --json
+```
+
+Corrected installed version:
+
+```text
+0.1.0+codex.20260621164433
+```
+
+Corrected installed skill IDs:
+
+```text
+full-cognitive-cycle
+p1-attend-to-evidence
+p1-curate-evidence
+p2-inquire-possibilities
+p2-integrate-possibilities
+p3-judge-sufficiency
+p3-reconcile-judgments
+p4-decide-responsibly
+p4-evaluate-decisions
+```
+
+Installed cache validation after renaming:
+
+```bash
+python3 /home/dgk/.codex/skills/.system/plugin-creator/scripts/validate_plugin.py \
+  /home/dgk/.codex/plugins/cache/personal/cognitive-cycle/0.1.0+codex.20260621164433
 ```
 
 Result: passed.
