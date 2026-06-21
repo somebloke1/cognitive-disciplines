@@ -41,6 +41,9 @@ as root-level development guidance where appropriate.
 - Added a regression test that rejects accidental bundling of the development
   coordination skills.
 - Reinstalled the plugin from the repo-local `personal` marketplace.
+- Corrected the local Desktop Personal marketplace setup after verification
+  showed the CLI marketplace named `personal` had been pointing at the repo
+  root instead of the documented home personal marketplace.
 
 ## Validation Evidence
 
@@ -84,8 +87,57 @@ python3 /home/dgk/.codex/skills/.system/plugin-creator/scripts/validate_plugin.p
 
 Result: passed.
 
-Installed plugin readback:
+Initial repo-root plugin readback before Desktop Personal correction:
 
 ```text
 cognitive-cycle@personal  installed, enabled  0.1.0+codex.20260621163125  /home/dgk/workspace/cognitive-disciplines/plugins/cognitive-cycle
 ```
+
+Desktop Personal marketplace correction:
+
+```bash
+mkdir -p /home/dgk/.agents/plugins /home/dgk/.codex/plugins
+cp -a /home/dgk/workspace/cognitive-disciplines/plugins/cognitive-cycle \
+  /home/dgk/.codex/plugins/cognitive-cycle
+codex plugin marketplace remove personal --json
+codex plugin add cognitive-cycle@personal --json
+```
+
+Home personal marketplace:
+
+```text
+/home/dgk/.agents/plugins/marketplace.json
+```
+
+Corrected marketplace readback:
+
+```json
+{
+  "name": "personal",
+  "root": "/home/dgk"
+}
+```
+
+Corrected installed plugin readback:
+
+```json
+{
+  "pluginId": "cognitive-cycle@personal",
+  "version": "0.1.0+codex.20260621163125",
+  "installed": true,
+  "enabled": true,
+  "source": {
+    "source": "local",
+    "path": "/home/dgk/.codex/plugins/cognitive-cycle"
+  }
+}
+```
+
+Installed cache validation after correction:
+
+```bash
+python3 /home/dgk/.codex/skills/.system/plugin-creator/scripts/validate_plugin.py \
+  /home/dgk/.codex/plugins/cache/personal/cognitive-cycle/0.1.0+codex.20260621163125
+```
+
+Result: passed.
