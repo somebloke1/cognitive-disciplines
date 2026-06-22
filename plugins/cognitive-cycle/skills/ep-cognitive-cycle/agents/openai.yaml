@@ -1,4 +1,0 @@
-interface:
-  display_name: "EP Cognitive Cycle"
-  short_description: "Run the full EP P1-P4 cognitive cycle"
-  default_prompt: "Use $ep-cognitive-cycle to run a full P1-P4 emergent-probability audit cycle."

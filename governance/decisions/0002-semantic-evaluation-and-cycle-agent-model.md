@@ -23,6 +23,12 @@ latest available `gpt-*.*-mini` model variant. The controller must identify the
 current available model set, select the highest-version GPT mini model, and
 record the concrete model id used in the cycle manifest and packets.
 
+This development constraint governs repository validation and forward tests.
+The publishable runtime may present model options to end users and record a
+user-selected model, provided the manifest preserves the presented option set,
+the selection rule, and the exact selected model, and validators distinguish
+development-constrained runs from user-selected runtime runs.
+
 ## Rationale
 
 The cognitive-cycle plugin exists to discipline language-model cognition, not to
@@ -40,7 +46,9 @@ The harness should therefore separate:
 
 The model constraint keeps cognitive-cycle agent behavior consistent during
 development and prevents results from becoming an uncontrolled mixture of model
-capabilities.
+capabilities. Public runtime model choice is tracked separately so user-selected
+runs remain inspectable without being mistaken for governed development forward
+tests.
 
 ## Implications
 
@@ -53,4 +61,7 @@ capabilities.
 - Multi-agent cognitive-cycle tests must configure P1, P2, P3, P4, and
   same-phase integration agents with the latest available `gpt-*.*-mini`
   variant.
+- Runtime tests may exercise explicit user-selected model plumbing, but those
+  tests do not certify governed development-cycle semantic quality unless they
+  use the latest available `gpt-*.*-mini` model variant.
 - Non-cognitive structural automation may use ordinary deterministic tooling.

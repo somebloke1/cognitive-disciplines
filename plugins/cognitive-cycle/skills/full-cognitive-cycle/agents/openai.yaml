@@ -1,0 +1,4 @@
+interface:
+  display_name: "Full Cognitive Cycle"
+  short_description: "Run the complete P1-P4 discipline"
+  default_prompt: "Use $full-cognitive-cycle to run a full P1-P4 cognitive cycle."

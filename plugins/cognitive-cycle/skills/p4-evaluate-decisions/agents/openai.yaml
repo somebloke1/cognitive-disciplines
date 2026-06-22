@@ -1,0 +1,4 @@
+interface:
+  display_name: "P4: Evaluate Decisions"
+  short_description: "Choose among multiple P4 decision packets"
+  default_prompt: "Use $p4-evaluate-decisions to choose among multiple P4 evaluations within authority."

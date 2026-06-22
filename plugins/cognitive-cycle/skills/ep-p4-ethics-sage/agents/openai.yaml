@@ -1,4 +1,0 @@
-interface:
-  display_name: "EP P4 Ethics Sage"
-  short_description: "Evaluate multiple P4 decision packets"
-  default_prompt: "Use $ep-p4-ethics-sage to choose among multiple P4 evaluations within authority."

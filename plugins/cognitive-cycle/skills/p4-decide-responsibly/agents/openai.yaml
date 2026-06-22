@@ -1,0 +1,4 @@
+interface:
+  display_name: "P4: Decide Responsibly"
+  short_description: "Turn grounded judgment into commitment"
+  default_prompt: "Use $p4-decide-responsibly to turn a grounded judgment into a concrete decision."

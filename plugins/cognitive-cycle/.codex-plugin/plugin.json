@@ -1,6 +1,6 @@
 {
   "name": "cognitive-cycle",
-  "version": "0.1.0+codex.20260621161213",
+  "version": "0.1.0+codex.20260621180057",
   "description": "Harnessed P1-P4 cognitive-cycle skills, packet contracts, and structural validators for Codex.",
   "author": {
     "name": "cognitive-disciplines project"
@@ -13,13 +13,13 @@
     "skills",
     "cognitive-cycle",
     "multi-agent",
-    "governance"
+    "reasoning"
   ],
   "skills": "./skills/",
   "interface": {
     "displayName": "Cognitive Cycle",
     "shortDescription": "Run governed P1-P4 cognitive cycles.",
-    "longDescription": "Cognitive Cycle packages P1 Attend, P2 Inquire, P3 Judge, P4 Decide, same-phase integration roles, GitHub Project coordination, GraphQL efficiency guidance, durable packet contracts, and structural validation scripts for disciplined Codex agent cognition.",
+    "longDescription": "Cognitive Cycle packages P1 Attend, P2 Inquire, P3 Judge, P4 Decide, same-phase integration roles, durable packet contracts, curriculum-primed discipline, semantic review templates, and structural validation scripts for disciplined Codex agent cognition.",
     "developerName": "cognitive-disciplines project",
     "category": "Productivity",
     "capabilities": [
@@ -29,9 +29,9 @@
       "Structural validation"
     ],
     "defaultPrompt": [
-      "Use $ep-cognitive-cycle to run a governed P1-P4 review.",
-      "Use $ep-p1-attend to characterize the evidence first.",
-      "Use $github-project-agent-coordination to update the board."
+      "Use $full-cognitive-cycle to run a governed P1-P4 review.",
+      "Use $p1-attend-to-evidence to characterize the evidence first.",
+      "Use $p3-judge-sufficiency to assess whether the packet set is sufficient before P4."
     ]
   }
 }
