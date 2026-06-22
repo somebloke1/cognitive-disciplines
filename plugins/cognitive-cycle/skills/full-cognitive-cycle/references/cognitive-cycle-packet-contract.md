@@ -32,12 +32,19 @@ Every full cycle should establish:
 - `orienting_question`: the question that grounds the inquiry.
 - `implicit_unknown`: the shape of the missing insight the cycle is trying to resolve.
 - `mode`: `recommend-only`, `decision-only`, or `decide-and-enact`.
-- `source_scope`: files, repos, logs, prompts, docs, tools, or external sources in bounds.
+- `source_scope`: symbolic refs, URLs, records, observations, or concise scope
+  labels in bounds. Use `repo:...`, `plugin:...`, or `archive:...` for file
+  paths.
 - `recursion_budget`: total allowed recursions and any per-scope limits.
 - `phase_owners`: single agent, named subagents, or controller-owned phases.
+- `path_authority`: symbolic-root bindings and rules for resolving file,
+  plugin, repo, and archive references without hardcoded user-machine paths.
 - `same_phase_differentiation`: required when any phase level has multiple
   agents; map each peer agent to its focal emphasis, source or packet scope,
   and intended contribution.
+- `agent_model_policy`: available cycle-model options presented to the user,
+  the selection rule, the selected concrete model id, and whether all phase
+  packets must use that selected model.
 - `archive_target`: where accumulated packets and decisions will be recorded, if any.
 - `scale`: `individual`, `team`, or `legion`.
 
@@ -46,18 +53,37 @@ Every full cycle should establish:
 Every phase packet should start with:
 
 - `cycle_id`
-- `phase`: `p1`, `p2`, `p3`, or `p4`
+- `phase`: `p1`, `p2`, `p3`, `p4`, or a same-phase integration phase
+  (`p1-data-curation`, `p2-possibility-integration`, `p3-dialectic`,
+  `p4-ethical-integration`)
 - `pass`: positive integer
 - `owner`: agent or controller identity when known
 - `focal_emphasis`: required for same-phase multi-agent work; omit or mark
   `single-agent` for ordinary individual phases
+- `agent_model`: concrete selected cycle-model id from the manifest
 - `orienting_question`
 - `implicit_unknown`
 - `source_scope`
 - `input_packets`: packet ids or summaries consumed
-- `evidence_anchors`: concrete paths, commands, outputs, URLs, records, or observations
+- `evidence_anchors`: symbolic-root references, commands, URLs, records, or
+  observations. Prefer structured anchors with `ref`, optional
+  `resolved_path`, `kind`, and `note`.
 - `uncertainties`
 - `handoff_target`
+
+Symbolic path roots:
+
+- `plugin:<path>` for installed plugin files.
+- `skill:<path>` for files under the active skill directory, only when the
+  manifest declares a `skill` root. Prefer `plugin:skills/<skill-name>/...` for
+  durable public packet refs.
+- `repo:<path>` for task repository files, only when the manifest supplies a
+  repository root.
+- `archive:<path>` for current archive files.
+
+Do not use bare relative paths such as `plugins/cognitive-cycle/...`; use
+`plugin:scripts/...` or another symbolic root. If a symbolic path cannot be
+resolved, report the missing reference instead of substituting a similar root.
 
 ## P1 Packet
 
@@ -113,6 +139,7 @@ Recursion instruction fields:
 - `evidence_gap_or_possibility_gap`
 - `prior_packet_ids`
 - `budget_status`
+- `downstream_rerun_policy`
 
 P3 must not make the final P4 commitment.
 

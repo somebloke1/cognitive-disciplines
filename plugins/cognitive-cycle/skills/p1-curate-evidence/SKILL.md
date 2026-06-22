@@ -85,6 +85,12 @@ the packet set.
 
 ## Output Shape
 
+When a durable manifest/archive exists, return or write a JSON packet with
+`phase: "p1-data-curation"`, the common header fields, and integration fields
+`integration_level`, `peer_packets`, `peer_focal_emphases`,
+`consolidation_method`, `integrated_output`, `preserved_minority_reports`,
+`differentiation_account`, and `forbidden_work_check`.
+
 Return a concise integration artifact with these sections:
 
 - Scope: the P1 level, packet set, and curation boundary.

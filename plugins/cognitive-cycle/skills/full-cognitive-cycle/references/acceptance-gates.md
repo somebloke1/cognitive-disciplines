@@ -11,7 +11,8 @@ semantic gates with regex or keyword matching.
 3. Apply the relevant semantic gate.
 4. Accept, reject for repair, or recurse with exact instructions.
 5. Archive the review artifact under `semantic-reviews/` when using a durable
-   archive.
+   archive, and reference it from the packet as
+   `archive:semantic-reviews/<packet-id>.md`.
 
 Structural success does not imply semantic acceptance.
 
@@ -71,7 +72,7 @@ Accept only when:
 - each possibility is affirmed, rejected, or held inconclusive;
 - the packet chooses exactly one legal route;
 - recursion instructions include target, reason, required work, gap, prior
-  packet references, and budget status;
+  packet references, budget status, and downstream rerun policy;
 - P4 handoff is present when advancing.
 
 Reject when:

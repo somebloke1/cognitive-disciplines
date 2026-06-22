@@ -11,11 +11,13 @@ from pathlib import Path
 
 VALID_MODES = {"recommend-only", "decision-only", "decide-and-enact"}
 VALID_SCALES = {"individual", "team", "legion"}
+VALID_AGENT_SET_PHASES = {"p1", "p2", "p3", "p4"}
 DEFAULT_AVAILABLE_MODELS = tuple(
     model.strip()
     for model in os.environ.get("COGNITIVE_CYCLE_AVAILABLE_MODELS", "").split(",")
     if model.strip()
 )
+PLUGIN_ROOT = Path(__file__).resolve().parents[1]
 
 
 def parse_agent_set(value: str) -> tuple[str, list[str]]:
@@ -23,9 +25,31 @@ def parse_agent_set(value: str) -> tuple[str, list[str]]:
         raise argparse.ArgumentTypeError("agent sets must use phase=a,b,c")
     phase, raw_agents = value.split("=", 1)
     agents = [agent.strip() for agent in raw_agents.split(",") if agent.strip()]
-    if not phase.strip() or not agents:
+    phase = phase.strip()
+    if not phase or not agents:
         raise argparse.ArgumentTypeError("agent sets require a phase and at least one agent")
-    return phase.strip(), agents
+    if phase not in VALID_AGENT_SET_PHASES:
+        raise argparse.ArgumentTypeError(f"agent set phase must be one of {sorted(VALID_AGENT_SET_PHASES)}")
+    return phase, agents
+
+
+def parse_same_phase_differentiation(value: str) -> tuple[str, str, str]:
+    if "=" not in value:
+        raise argparse.ArgumentTypeError("same-phase differentiation must use phase.agent=focal-emphasis")
+    raw_phase_agent, focal_emphasis = value.split("=", 1)
+    if "." not in raw_phase_agent:
+        raise argparse.ArgumentTypeError("same-phase differentiation must use phase.agent=focal-emphasis")
+    phase, agent = raw_phase_agent.split(".", 1)
+    phase = phase.strip()
+    agent = agent.strip()
+    focal_emphasis = focal_emphasis.strip()
+    if not phase or not agent or not focal_emphasis:
+        raise argparse.ArgumentTypeError("same-phase differentiation requires phase, agent, and focal emphasis")
+    if phase not in VALID_AGENT_SET_PHASES:
+        raise argparse.ArgumentTypeError(
+            f"same-phase differentiation phase must be one of {sorted(VALID_AGENT_SET_PHASES)}"
+        )
+    return phase, agent, focal_emphasis
 
 
 def parse_gpt_mini_version(model: str) -> tuple[int, ...] | None:
@@ -56,6 +80,14 @@ def select_latest_gpt_mini(models: list[str]) -> str:
     return candidates[-1][1]
 
 
+def select_cycle_model(models: list[str], selected_model: str | None) -> tuple[str, str]:
+    if selected_model is None:
+        return select_latest_gpt_mini(models), "latest-available-gpt-mini"
+    if selected_model not in models:
+        raise SystemExit("--selected-agent-model must match one of the provided --available-agent-model values")
+    return selected_model, "user-selected"
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--archive-root", default="cycle-runs")
@@ -69,17 +101,33 @@ def main() -> int:
     parser.add_argument("--phase-owner", action="append", default=[])
     parser.add_argument("--agent-set", type=parse_agent_set, action="append", default=[])
     parser.add_argument(
+        "--same-phase-differentiation",
+        type=parse_same_phase_differentiation,
+        action="append",
+        default=[],
+        help="Required for multi-agent phases. Use phase.agent=focal-emphasis; repeat for each peer.",
+    )
+    parser.add_argument(
+        "--repo-root",
+        help="Optional task repository root to expose as repo: in path_authority.",
+    )
+    parser.add_argument(
         "--available-agent-model",
         action="append",
-        default=list(DEFAULT_AVAILABLE_MODELS),
-        help="Currently available model id; repeat to let the harness select the latest gpt-*.*-mini dynamically.",
+        default=None,
+        help="Currently available model id to present as a user-selectable cycle option; repeat for each option.",
+    )
+    parser.add_argument(
+        "--selected-agent-model",
+        help="Concrete model id selected by the user for the cycle. Defaults to the latest available gpt-*.*-mini.",
     )
     args = parser.parse_args()
 
     if args.recursion_budget < 0:
         raise SystemExit("--recursion-budget must be non-negative")
 
-    archive = Path(args.archive_root) / args.cycle_id
+    archive = Path(args.archive_root).expanduser() / args.cycle_id
+    archive = archive.resolve(strict=False)
     packets = archive / "packets"
     ledgers = archive / "ledgers"
     registers = archive / "registers"
@@ -89,9 +137,35 @@ def main() -> int:
         directory.mkdir(parents=True, exist_ok=True)
 
     agent_sets = {phase: agents for phase, agents in args.agent_set}
-    if not args.available_agent_model:
+    same_phase_differentiation: dict[str, dict[str, dict[str, str]]] = {}
+    for phase, agent, focal_emphasis in args.same_phase_differentiation:
+        same_phase_differentiation.setdefault(phase, {})[agent] = {
+            "focal_emphasis": focal_emphasis,
+        }
+
+    available_agent_models = args.available_agent_model or list(DEFAULT_AVAILABLE_MODELS)
+    if not available_agent_models:
         raise SystemExit("provide current models with --available-agent-model or COGNITIVE_CYCLE_AVAILABLE_MODELS")
-    selected_agent_model = select_latest_gpt_mini(args.available_agent_model)
+    selected_agent_model, selection_rule = select_cycle_model(available_agent_models, args.selected_agent_model)
+    path_roots = {
+        "plugin": {
+            "description": "Installed cognitive-cycle plugin root",
+            "runtime_path": str(PLUGIN_ROOT.resolve(strict=False)),
+            "portable": True,
+        },
+        "archive": {
+            "description": "Current cycle archive root",
+            "runtime_path": str(archive),
+            "portable": False,
+        },
+    }
+    if args.repo_root:
+        path_roots["repo"] = {
+            "description": "Task repository root supplied by the controller",
+            "runtime_path": str(Path(args.repo_root).expanduser().resolve(strict=False)),
+            "portable": False,
+        }
+
     manifest = {
         "cycle_id": args.cycle_id,
         "orienting_question": args.orienting_question,
@@ -103,10 +177,20 @@ def main() -> int:
         "archive_target": str(archive),
         "scale": args.scale,
         "agent_sets": agent_sets,
+        "same_phase_differentiation": same_phase_differentiation,
+        "path_authority": {
+            "roots": path_roots,
+            "rules": {
+                "bare_relative_paths_allowed": False,
+                "substitute_similar_roots_allowed": False,
+                "public_artifacts_prefer_symbolic_refs": True,
+            },
+        },
         "agent_model_policy": {
-            "selection_rule": "latest-available-gpt-mini",
-            "available_agent_models": args.available_agent_model,
+            "selection_rule": selection_rule,
+            "available_agent_models": available_agent_models,
             "selected_cognitive_cycle_agent": selected_agent_model,
+            "user_selectable": True,
             "exclusive": True,
         },
         "semantic_evaluation_policy": {

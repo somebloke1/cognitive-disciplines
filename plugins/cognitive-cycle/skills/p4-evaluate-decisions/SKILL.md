@@ -70,6 +70,12 @@ Treat the harness as binding. Use judgment only inside its authority. If the bes
 
 ## Output Shape
 
+When a durable manifest/archive exists, return or write a JSON packet with
+`phase: "p4-ethical-integration"`, the common header fields, and integration
+fields `integration_level`, `peer_packets`, `peer_focal_emphases`,
+`consolidation_method`, `integrated_output`, `preserved_minority_reports`,
+`differentiation_account`, and `forbidden_work_check`.
+
 Return a compact integration packet:
 
 - `mode`: requested mode.

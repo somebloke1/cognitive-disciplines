@@ -43,6 +43,10 @@ validate structure deterministically and evaluate the contents semantically.
 Agents performing cognitive cycles during development must use the latest
 available `gpt-*.*-mini` model variant. The controller must identify the current
 available model set and record the selected concrete model id.
+Published runtime cycles may record a user-selected model when the user is
+choosing from presented options; do not treat those user-selected runtime runs
+as governed development forward tests unless they still use the latest available
+GPT mini variant.
 
 ## GitHub Surface
 

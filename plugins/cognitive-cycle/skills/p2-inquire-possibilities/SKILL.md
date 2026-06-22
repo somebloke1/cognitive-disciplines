@@ -55,7 +55,14 @@ The soft harness supplies the P1 packet, cycle manifest, output packet shape, an
 
 ## Output Shape
 
-For each possibility include:
+When a durable manifest/archive exists, return or write a JSON packet matching
+the validator keys: common header fields plus `possibilities`,
+`surface_variant_duplicate_check`, and `questions_for_p3`. Use the selected
+manifest model in `agent_model`, symbolic refs in `source_scope` and
+`evidence_anchors`, and `archive:semantic-reviews/<packet-id>.md` for
+`semantic_review.review_ref`.
+
+For conversational/non-archive use, structure each possibility with:
 
 - Name
 - Core claim

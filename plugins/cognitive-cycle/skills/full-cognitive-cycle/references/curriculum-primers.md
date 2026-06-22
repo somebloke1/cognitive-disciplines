@@ -19,8 +19,9 @@ Each phase agent should produce a brief grounding note before active work:
 - forbidden work acknowledged;
 - expected packet and handoff named.
 
-During development, cognitive-cycle agents use the latest available
-`gpt-*.*-mini` model variant only.
+Cognitive-cycle agents use the model selected in the cycle manifest. If the
+user did not select a model, the controller defaults to the latest available
+`gpt-*.*-mini` variant.
 
 ## P1 Attend
 

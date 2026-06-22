@@ -61,7 +61,14 @@ The soft harness supplies accumulated packets, recursion budget, phase order, an
 
 ## Output Shape
 
-Use one of these headings:
+When a durable manifest/archive exists, return or write a JSON packet matching
+the validator keys: common header fields plus `outcome`,
+`p1_sufficiency_finding`, `p2_sufficiency_finding`, `evaluations`, and
+`evidence_basis`. Add `recursion_instruction` when returning to P1/P2 and
+`p4_handoff` when advancing. Recursion instructions must include
+`downstream_rerun_policy`.
+
+For conversational/non-archive use, use one of these headings:
 
 - `Return to P1`
 - `Return to P2`

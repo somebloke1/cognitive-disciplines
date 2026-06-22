@@ -70,7 +70,11 @@ Personal plugin reinstall:
 python3 /home/dgk/.codex/skills/.system/plugin-creator/scripts/update_plugin_cachebuster.py \
   /home/dgk/workspace/cognitive-disciplines/plugins/cognitive-cycle
 
-cp -a plugins/cognitive-cycle/. /home/dgk/.codex/plugins/cognitive-cycle
+rm -rf /home/dgk/.codex/plugins/cognitive-cycle
+cp -a /home/dgk/workspace/cognitive-disciplines/plugins/cognitive-cycle \
+  /home/dgk/.codex/plugins/cognitive-cycle
+diff -qr /home/dgk/workspace/cognitive-disciplines/plugins/cognitive-cycle \
+  /home/dgk/.codex/plugins/cognitive-cycle
 
 codex plugin add cognitive-cycle@personal --json
 ```

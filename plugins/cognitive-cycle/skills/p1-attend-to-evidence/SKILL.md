@@ -57,7 +57,15 @@ The soft harness supplies scope, packet shape, orienting question, implicit unkn
 
 ## Output Shape
 
-Use sections like:
+When a durable manifest/archive exists, return or write a JSON packet matching
+the validator keys: common header fields plus
+`scope_and_sources_inspected`, `observations`, `relevant_absences`,
+`inferences_and_uncertainties`, `risks_of_p1_insufficiency`, and
+`material_for_p2`. Use the selected manifest model in `agent_model`, symbolic
+refs in `source_scope` and `evidence_anchors`, and
+`archive:semantic-reviews/<packet-id>.md` for `semantic_review.review_ref`.
+
+For conversational/non-archive use, use sections like:
 
 - Scope and Sources Inspected
 - Observations

@@ -77,4 +77,6 @@ evaluate the contained semantics with model or agent judgment.
 
 During development, agents performing cognitive cycles must use the latest
 available `gpt-*.*-mini` model variant. The concrete model id must be recorded
-in the manifest and packets.
+in the manifest and packets. Public runtime cycles may record a user-selected
+model, but those runs are not governed development forward tests unless the
+selected model satisfies the development constraint.

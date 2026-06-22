@@ -14,6 +14,8 @@ Use [references/cognitive-cycle-packet-contract.md](references/cognitive-cycle-p
 Use [references/harness-structural-contract.md](references/harness-structural-contract.md) when creating or validating durable run archives.
 Use [references/curriculum-primers.md](references/curriculum-primers.md) before assigning specialist phase work.
 Use [references/same-phase-differentiation.md](references/same-phase-differentiation.md) when assigning more than one agent to a single P1, P2, P3, or P4 level.
+Use [references/path-authority.md](references/path-authority.md) before
+assigning agents to inspect files, plugin resources, repo records, or archives.
 Use [references/acceptance-gates.md](references/acceptance-gates.md) and [references/controller-transition-matrix.md](references/controller-transition-matrix.md) when accepting, rejecting, repairing, or routing packets.
 
 ## SuperLoop Stance
@@ -44,6 +46,8 @@ Soft harness responsibilities:
 - Enforce mode, recursion budget, packet validation, archive convention, and stop conditions.
 - Keep contradiction, duplicate, uncertainty, and decision registers for large runs.
 - Route same-phase multi-agent sets through the required integration skill before cross-phase handoff.
+- Bind symbolic path roots in the manifest and pass symbolic-root references
+  instead of machine-local absolute paths when assigning source scope.
 
 Cognitive judgment responsibilities:
 
@@ -54,10 +58,11 @@ Cognitive judgment responsibilities:
 
 Do not confuse harness compliance with cognitive adequacy. A well-formed packet can still be weak.
 
-During development, cognitive-cycle phase agents and same-phase integration
-agents must use the latest available `gpt-*.*-mini` model variant. Identify the
-current available model set, select the highest-version GPT mini model, and
-record the concrete model id in the manifest and packets.
+Before running a cycle, present the available cycle-model options to the user
+and let the user select the model. If the user does not choose, default to the
+latest available `gpt-*.*-mini` variant. Record the complete option list, the
+selection rule, and the selected concrete model id in the manifest; every packet
+and semantic review must use that selected model id.
 
 Do not evaluate language-model generated semantics with regex, pattern matching,
 keyword counts, or superficial label checks. Deterministic checks may validate
@@ -75,16 +80,26 @@ Before phase work, establish:
 - `source_scope`
 - `recursion_budget`
 - `phase_owners`
+- `path_authority`: symbolic roots such as `plugin:`, `repo:`, and
+  `archive:`, with substitution rules
+- `same_phase_differentiation`, when a phase has more than one peer agent
+- `agent_model_policy`: available model options, user selection or default
+  selection rule, selected concrete model id, and exclusivity
 - `archive_target`, if any
 - `scale`: `individual`, `team`, or `legion`
 
 If the user has not specified mode, default to `recommend-only` unless they explicitly authorized implementation or direct action. In a cycle, pass the manifest mode through to P4; do not infer authority late.
 
 For durable runs, initialize an archive with
-`plugins/cognitive-cycle/scripts/init_cycle_run.py` and validate structure with
-`plugins/cognitive-cycle/scripts/validate_cycle_artifacts.py`. Treat validation
+`plugin:scripts/init_cycle_run.py` and validate structure with
+`plugin:scripts/validate_cycle_artifacts.py`. Treat validation
 success as structural evidence only; semantic acceptance still requires a review
 artifact from an agent/model evaluator.
+
+When initializing a durable run, pass each presented option with
+`--available-agent-model`. If the user selected a model, pass it with
+`--selected-agent-model`; otherwise omit that flag and allow the initializer to
+default to the latest available GPT mini model.
 
 ## Grounding
 
@@ -137,6 +152,9 @@ Use subagents only when the user asked for delegation or parallel agent work and
 Controller protocol:
 
 1. Assign P1 to evidence characterization with source scope and packet contract. When using multiple P1 agents, differentiate them by attentional coverage: source strata, tool pathway, evidential question, provenance, absence, contradiction, or boundary condition.
+   Record the assigned focal emphasis in `same_phase_differentiation` and pass
+   symbolic evidence references such as `plugin:...`, `repo:...`, and
+   `archive:...`.
 2. If more than one P1 agent produced packets, run `p1-curate-evidence` to consolidate the P1 set before P2. Skip this for a single P1 agent.
 3. Assign P2 only after a single P1 packet or curated P1 dataset exists. When using multiple P2 agents, differentiate them by creative and formulative impetus: architecture, governance, failure mode, emergence path, conservative formulation, disruptive formulation, or boundary expansion.
 4. If more than one P2 agent produced packets, run `p2-integrate-possibilities` to consolidate the P2 set before P3. Skip this for a single P2 agent.
@@ -156,6 +174,8 @@ For many agents or repeated cycles over a codebase/material set:
 
 1. Decompose the source scope into strata, modules, documents, or problem slices.
 2. Run parallel P1 passes on disjoint scopes or differentiated attentional/tool foci.
+   Use symbolic-root paths in assignments; do not ask agents to infer which
+   plugin copy or repository checkout is authoritative.
 3. When a scope has multiple P1 packets, route them through `p1-curate-evidence` before P2.
 4. Build an accumulated packet index and contradiction register.
 5. Run P2 passes per scope or across related scopes with differentiated creative/formulative impetus; check duplicates and surface variants.

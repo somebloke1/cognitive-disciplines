@@ -65,7 +65,13 @@ The soft harness supplies mode, accumulated record, P3 handoff, archive target, 
 
 ## Output Shape
 
-Use sections like:
+When a durable manifest/archive exists, return or write a JSON packet matching
+the validator keys: common header fields plus `decision_or_recommendation`,
+`mode_and_authority`, `grounding`, `commitments_and_next_actions`,
+`foreclosed_alternatives`, `residual_uncertainty`, `reassessment_conditions`,
+and `new_p1_seed`. Use the manifest mode exactly.
+
+For conversational/non-archive use, use sections like:
 
 - Decision
 - Mode and Authority

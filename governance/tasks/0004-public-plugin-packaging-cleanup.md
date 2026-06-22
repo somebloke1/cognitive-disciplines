@@ -196,7 +196,10 @@ Desktop Personal marketplace correction:
 
 ```bash
 mkdir -p /home/dgk/.agents/plugins /home/dgk/.codex/plugins
+rm -rf /home/dgk/.codex/plugins/cognitive-cycle
 cp -a /home/dgk/workspace/cognitive-disciplines/plugins/cognitive-cycle \
+  /home/dgk/.codex/plugins/cognitive-cycle
+diff -qr /home/dgk/workspace/cognitive-disciplines/plugins/cognitive-cycle \
   /home/dgk/.codex/plugins/cognitive-cycle
 codex plugin marketplace remove personal --json
 codex plugin add cognitive-cycle@personal --json
